@@ -326,7 +326,13 @@
     }
 
     .grid-2 {
-      display: grid;
+      display:-moz-stack;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem 1.3rem;
+    }
+    
+    .grid-3 {
+      display:grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.2rem 1.3rem;
     }
@@ -558,7 +564,7 @@
           <span>Resume & Portfolio</span>
         </h1>
         <p class="hero-subtitle">
-          US military leader, geospatial educator, and intelligence professional seeking opportunity to contribute to a mission-driven organization.
+          Separating US military leader, geospatial educator, and journeyman intelligence professional seeking opportunities to contribute to a mission-driven organization.
         
         </p>
 
@@ -633,14 +639,12 @@
           </div>
           <div class="card-body">
             <ul>
-              <li>
-                <b>Deputy Director, Geospatial Intelligence </b>– Oversees Academy certificate program.
-              </li>
-              <li>
-                <b>Course Director </b>– Curriculum design & instructor for advanced sociocultural course.
-              </li>
-              <li><b>Department Executive Officer (XO) </b>– Leads operations, staffing support, and administrative workflow for a 46-member blended military/civilian faculty.
-              </li>
+              <li> <b>Deputy Director, Geospatial Intelligence</b> – Oversees the Academy’s GEOINT certificate program, coordinating curriculum, faculty engagement, and student progression.</li>
+              <li> <b>Course Director</b> – Designs and teaches advanced cultural and geospatial courses; leads curriculum development grounded in applied geographic analysis.</li>
+              <li> <b>Department Executive Officer (XO) </b>– Manages operations, staffing, and administrative workflow for a 46-member military/civilian faculty.</li>
+            </ul>
+            <ul>
+              <i>Equivalent Civilian Funtcion: Lecturer • Senior Tutor • Academic Program Coordinator • Geospatial Intelligence Program Manager • Curriculum Designer</i>
             </ul>
           </div>
         </article>
@@ -648,15 +652,38 @@
         <article class="card">
           <div class="card-header">
             <div>
-              <div class="card-title">Intelligence Officer</div>
+              <div class="card-title">Senior Intelligence Duty Officer</div>
               <div class="card-subtitle">United States Air Force</div>
             </div>
-            <div class="card-meta">2019 – Present</div>
+            <div class="card-meta">2022 – 2024</div>
           </div>
           <div class="card-body">
             <ul>
               <li>Delivers operational intelligence for global air missions, provides decision-ready analysis for crisis response, logistics, and international operations.</li>
-              <li>Leads real-time intelligence monitoring and risk assessment teams to ensure safe & informed movement of personnel and resources, worldwide.</li>
+              <li>leaders real-time intelligence monitoring and risk assessment teams to ensure safe & informed movement of personnel and resources, worldwide.</li>
+            </ul>
+            <ul>
+              <i>Equivalent Civilian Funtcion: Intelligence Operations Lead • Situational Awareness & Risk Analyst • Operational Threat Supervisor.</i>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Chief, Intelligence Unit Support</div>
+              <div class="card-subtitle">United States Air Force</div>
+            </div>
+            <div class="card-meta">2019 – 2022</div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Managed processes & policy to organize, train, and equip 114 intelligence units worldwide.</li>
+              <li>Led training, readiness tracking, and administrative workflows to ensure analysts remain certified, equipped, and mission-ready.</li>
+              <li>Coordinated intelligence support requirements with leadership, operational planners, and external agencies.</li>
+            </ul>
+            <ul>
+              <i>Equivalent civilian funtcion: Operations Manager • Intelligence Support Manager • Risk & Analysis Operations Lead</i>
             </ul>
           </div>
         </article>
@@ -664,17 +691,20 @@
         <article class="card">
             <div class="card-header">
               <div>
-                <div class="card-title">Noncommissioned Officer</div>
+                <div class="card-title">Noncommissioned Officer (NCO)</div>
                 <div class="card-subtitle">United States Air Force</div>
               </div>
               <div class="card-meta">2013 – 2019</div>
             </div>
             <div class="card-body">
               <ul>
-                <li>Former Avionics Specialist on HC-130J Combat Search and Rescue aircraft supporting combat, training, and humanitarian missions worldwide.
-                <li>Served as NCOIC of a 10-person avionics shop, leading maintenance operations, troubleshooting, and mission-ready systems support for global taskings
+                <li>Avionics Specialist on HC-130J Combat Search and Rescue aircraft supporting combat, training, and humanitarian missions worldwide.
+                <li>Served as NCO in charge of a 10-person avionics section, overseeing maintenance operations, troubleshooting, and mission-ready systems support for global taskings
                 </li>
               </ul>
+               <ul>
+              <i>Equivalent Civilian Funtcion: Avionics Maintenance Supervisor • Technical Operations Manager • Aircraft Systems Maintenance Lead • Aviation Maintenance Team Leader</i>
+            </ul>
             </div>
           </article>
 
@@ -691,7 +721,7 @@
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-3">
         <article class="card">
           <div class="card-header">
             <div>
@@ -762,7 +792,7 @@
         </p>
       </div>
 
-      <div class="grid-2">
+      <div class="grid-3">
         <article class="card">
             <div class="card-header">
               <div>
