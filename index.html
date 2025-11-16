@@ -506,7 +506,10 @@
       }
 
       .grid-2 {
-        grid-template-columns: minmax(0, 1fr);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 1.3rem;  /* side-to-side spacing */
+        row-gap: 2.2rem;     /* vertical spacing between rows */
       }
 
       .skills-grid {
@@ -564,8 +567,7 @@
           <span>Resume & Portfolio</span>
         </h1>
         <p class="hero-subtitle">
-          Separating US military leader, geospatial educator, and journeyman intelligence professional seeking opportunities to contribute to a mission-driven organization.
-        
+          US military leader, geospatial educator, and intelligence professional seeking opportunity to contribute to a mission-driven organization.
         </p>
 
         <div class="hero-meta">
@@ -644,7 +646,7 @@
               <li> <b>Department Executive Officer (XO) </b>– Manages operations, staffing, and administrative workflow for a 46-member military/civilian faculty.</li>
             </ul>
             <ul>
-              <i>Equivalent Civilian Funtcion: Lecturer • Senior Tutor • Academic Program Coordinator • Geospatial Intelligence Program Manager • Curriculum Designer</i>
+              <i><b>Equivalent Civilian Function:</b> Lecturer • Senior Tutor • Academic Program Coordinator • Geospatial Intelligence Program Manager • Curriculum Designer</i>
             </ul>
           </div>
         </article>
@@ -663,7 +665,7 @@
               <li>leaders real-time intelligence monitoring and risk assessment teams to ensure safe & informed movement of personnel and resources, worldwide.</li>
             </ul>
             <ul>
-              <i>Equivalent Civilian Funtcion: Intelligence Operations Lead • Situational Awareness & Risk Analyst • Operational Threat Supervisor.</i>
+              <i><b>Equivalent Civilian Function:</b> Intelligence Operations Lead • Situational Awareness & Risk Analyst • Operational Threat Supervisor.</i>
             </ul>
           </div>
         </article>
@@ -683,7 +685,7 @@
               <li>Coordinated intelligence support requirements with leadership, operational planners, and external agencies.</li>
             </ul>
             <ul>
-              <i>Equivalent civilian funtcion: Operations Manager • Intelligence Support Manager • Risk & Analysis Operations Lead</i>
+              <i><b>Equivalent Civilian Function:</b> Operations Manager • Intelligence Support Manager • Risk & Analysis Operations Lead</i>
             </ul>
           </div>
         </article>
@@ -703,7 +705,7 @@
                 </li>
               </ul>
                <ul>
-              <i>Equivalent Civilian Funtcion: Avionics Maintenance Supervisor • Technical Operations Manager • Aircraft Systems Maintenance Lead • Aviation Maintenance Team Leader</i>
+              <i><b>Equivalent Civilian Function:</b> Avionics Maintenance Supervisor • Technical Operations Manager • Aircraft Systems Maintenance Lead • Aviation Maintenance Team Leader</i>
             </ul>
             </div>
           </article>
@@ -754,9 +756,9 @@
         <article class="card">
           <div class="card-header">
             <div>
-              <div class="card-title">Another Project</div>
+              <div class="card-title">Using GeoAI to Enhance Air Operations in the Future Battlespace</div>
               <div class="card-subtitle">
-                1-liner about tech stack or outcome.
+                Master’s degree capstone project 
               </div>
             </div>
             <div class="card-meta">
@@ -770,8 +772,7 @@
           </div>
           <div class="card-body">
             <p>
-              Describe what you did, what tools you used, and what you learned or
-              achieved.
+              Designed a proof-of-concept Large Language Model (LLM) platform linking intelligence reports to designated points on a map. Additionally, the project explored the feasibility of using LLMs & General Purpose Technologies (GPTs) to analyze & interpret images of maps/charts denoting various ballistic missile ranges. Presented to private consortium of defense professionals and academics.
             </p>
             <div class="chip-row">
               <span class="chip">Python</span>
@@ -804,7 +805,7 @@
               <div class="card-meta">2025 – Current</div>
             </div>
             <div class="card-body">
-              <p>Research focused on educating future military leaders in geospatial sciences</p>
+              <p>Research examines geospatial education, curriculum design, and the development of future military and civilian geospatial leaders.</p>
             </div>
           </article>
           <article class="card">
@@ -847,7 +848,7 @@
             <div class="card-meta">2014-2016</div>
           </div>
           <div class="card-body">
-        
+        <p>Vocational degree in avionics maintenance, aircraft systems, and aerospace electronics</p>
           </div>
         </article>
       </div>
@@ -916,9 +917,8 @@
 
         <div class="contact-row">
           <!-- Email -->
-          <a href="mailto:you@example.com" class="contact-link">
-            jared.dumale@afacademy.af.edu
-            <span>Email</span>
+          <a href="mailto:dumalej@gmail.com" class="contact-link">
+            <span>Email Me</span>
           </a>
 
           <!-- LinkedIn -->
@@ -927,21 +927,8 @@
             target="_blank"
             rel="noopener"
             class="contact-link"
-          >
-            LinkedIn
-            <span>Professional</span>
-          </a>
-
-          <!-- GitHub -->
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener"
-            class="contact-link"
-          >
-            GitHub
-            <span>Code &amp; projects</span>
-          </a>
+          ><span>LinkedIn</span>
+          </a>         
         </div>
       </div>
     </section>
