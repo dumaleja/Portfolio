@@ -35,6 +35,16 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    .topo-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -44,6 +54,8 @@
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 1.5rem 1.25rem 3rem;
+      position: relative;
+      z-index: 1;
     }
 
     /* Top Bar / Nav */
@@ -494,6 +506,8 @@
     }
 
     footer {
+      position: relative;
+      z-index: 1;
       max-width: var(--max-width);
       margin: 0.8rem auto 0;
       padding: 0 1.25rem 1.25rem;
@@ -557,6 +571,56 @@
   </style>
 </head>
 <body>
+  <!-- Topographic contour background -->
+  <svg class="topo-bg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Formation A: upper-left -->
+      <path d="M120,400 C130,250 250,140 380,150 C510,160 600,280 580,420 C560,560 430,640 300,620 C170,600 110,550 120,400Z" stroke="#6366f1" opacity="0.15" stroke-width="1"/>
+      <path d="M170,395 C180,275 280,185 380,195 C480,205 555,310 535,415 C515,520 410,585 310,570 C210,555 160,510 170,395Z" stroke="#6366f1" opacity="0.12" stroke-width="1"/>
+      <path d="M220,390 C228,310 305,240 380,248 C455,256 510,340 493,418 C476,496 395,540 325,528 C255,516 212,470 220,390Z" stroke="#6366f1" opacity="0.09" stroke-width="1"/>
+      <path d="M275,390 C280,335 325,295 380,300 C435,305 470,365 458,418 C446,471 398,500 348,492 C298,484 270,445 275,390Z" stroke="#6366f1" opacity="0.07" stroke-width="1"/>
+      <path d="M325,392 C328,360 350,340 380,343 C410,346 430,378 423,410 C416,442 393,458 368,453 C343,448 322,424 325,392Z" stroke="#6366f1" opacity="0.05" stroke-width="1"/>
+
+      <!-- Formation B: center-right -->
+      <path d="M780,340 C800,175 925,75 1065,95 C1205,115 1305,260 1275,415 C1245,570 1105,660 960,630 C815,600 760,505 780,340Z" stroke="#22c55e" opacity="0.10" stroke-width="1"/>
+      <path d="M835,345 C850,215 950,135 1060,150 C1170,165 1245,285 1220,405 C1195,525 1085,595 970,570 C855,545 820,475 835,345Z" stroke="#22c55e" opacity="0.08" stroke-width="1"/>
+      <path d="M895,355 C905,255 978,195 1060,205 C1142,215 1195,315 1175,405 C1155,495 1065,545 985,528 C905,511 885,455 895,355Z" stroke="#22c55e" opacity="0.06" stroke-width="1"/>
+      <path d="M955,365 C962,295 1005,258 1060,263 C1115,268 1148,338 1135,405 C1122,472 1063,505 1010,493 C957,481 948,435 955,365Z" stroke="#22c55e" opacity="0.05" stroke-width="1"/>
+
+      <!-- Formation C: lower-center -->
+      <path d="M380,790 C400,635 535,535 685,555 C835,575 945,715 915,870 C885,1025 745,1090 600,1060 C455,1030 360,945 380,790Z" stroke="#6366f1" opacity="0.12" stroke-width="1"/>
+      <path d="M430,785 C445,665 555,585 675,600 C795,615 880,730 855,855 C830,980 720,1030 615,1005 C510,980 415,905 430,785Z" stroke="#6366f1" opacity="0.09" stroke-width="1"/>
+      <path d="M490,782 C500,690 580,628 670,640 C760,652 825,742 805,840 C785,938 700,975 630,958 C560,941 480,874 490,782Z" stroke="#6366f1" opacity="0.07" stroke-width="1"/>
+      <path d="M545,782 C552,715 605,672 670,680 C735,688 780,755 765,830 C750,905 695,930 645,918 C595,906 538,849 545,782Z" stroke="#6366f1" opacity="0.05" stroke-width="1"/>
+
+      <!-- Formation D: top-right corner -->
+      <path d="M1250,150 C1262,45 1355,-5 1445,18 C1535,41 1585,135 1565,228 C1545,321 1462,370 1372,348 C1282,326 1238,255 1250,150Z" stroke="#a855f7" opacity="0.10" stroke-width="1"/>
+      <path d="M1295,162 C1303,85 1368,48 1430,65 C1492,82 1525,148 1510,218 C1495,288 1438,318 1378,302 C1318,286 1287,239 1295,162Z" stroke="#a855f7" opacity="0.07" stroke-width="1"/>
+      <path d="M1338,178 C1343,125 1382,100 1418,112 C1454,124 1472,168 1462,212 C1452,256 1418,275 1388,265 C1358,255 1333,231 1338,178Z" stroke="#a855f7" opacity="0.05" stroke-width="1"/>
+
+      <!-- Formation E: left edge -->
+      <path d="M-40,660 C-18,545 78,470 168,492 C258,514 310,618 278,720 C246,822 152,870 68,840 C-16,810 -62,775 -40,660Z" stroke="#6366f1" opacity="0.08" stroke-width="1"/>
+      <path d="M15,668 C30,580 98,525 168,542 C238,559 278,640 255,718 C232,796 162,828 100,805 C38,782 0,756 15,668Z" stroke="#6366f1" opacity="0.06" stroke-width="1"/>
+
+      <!-- Formation F: bottom-right -->
+      <path d="M1100,695 C1122,585 1235,515 1358,548 C1481,581 1540,715 1510,838 C1480,961 1365,1015 1252,990 C1139,965 1078,805 1100,695Z" stroke="#22c55e" opacity="0.08" stroke-width="1"/>
+      <path d="M1155,710 C1170,622 1258,568 1350,595 C1442,622 1488,728 1462,818 C1436,908 1342,948 1260,928 C1178,908 1140,798 1155,710Z" stroke="#22c55e" opacity="0.06" stroke-width="1"/>
+      <path d="M1208,730 C1218,665 1282,625 1348,648 C1414,671 1445,748 1425,818 C1405,888 1335,912 1280,898 C1225,884 1198,795 1208,730Z" stroke="#22c55e" opacity="0.05" stroke-width="1"/>
+
+      <!-- Small scattered features -->
+      <path d="M50,120 C68,55 148,22 218,48 C288,74 318,158 288,228 C258,298 178,318 118,282 C58,246 32,185 50,120Z" stroke="#6366f1" opacity="0.06" stroke-width="0.8"/>
+      <path d="M88,138 C100,92 152,68 198,85 C244,102 262,158 242,208 C222,258 172,272 132,248 C92,224 76,184 88,138Z" stroke="#6366f1" opacity="0.04" stroke-width="0.8"/>
+
+      <path d="M1350,450 C1362,398 1408,372 1452,388 C1496,404 1518,455 1502,502 C1486,549 1438,568 1398,548 C1358,528 1338,502 1350,450Z" stroke="#a855f7" opacity="0.06" stroke-width="0.8"/>
+
+      <!-- Connecting ridgelines -->
+      <path d="M440,505 C478,548 518,618 558,682 C598,742 638,778 678,795" stroke="#6366f1" opacity="0.06" stroke-width="0.7"/>
+      <path d="M575,420 C648,432 748,402 838,368" stroke="#6366f1" opacity="0.05" stroke-width="0.7"/>
+      <path d="M1100,608 C1048,628 978,672 918,722 C858,772 818,812 798,848" stroke="#22c55e" opacity="0.05" stroke-width="0.7"/>
+      <path d="M288,228 C310,268 338,318 365,370" stroke="#6366f1" opacity="0.04" stroke-width="0.7"/>
+    </g>
+  </svg>
+
   <header>
     <div class="nav-inner">
       <div class="nav-brand">
