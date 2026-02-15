@@ -1,1207 +1,618 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Jared Dumale | Resume</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Online resume and portfolio for Your Name." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Jared Alexander Dumale — Geospatial Professional | PhD scholar | Military Leader" />
+  <title>Jared Alexander Dumale | Resume</title>
+
   <style>
-    :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --accent: #180fc2;
-      --accent-soft: rgba(79, 70, 229, 0.08);
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --card-radius: 16px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
-      --max-width: 960px;
+    :root{
+      --bg:#0b0f17;
+      --card:#0f1624;
+      --text:#e7eefc;
+      --muted:#a6b3cc;
+      --line:rgba(255,255,255,.10);
+      --accent:#69a7ff;
+      --accent2:#7be3c7;
+      --shadow: 0 18px 45px rgba(0,0,0,.45);
+
+      --radius:18px;
+      --max:1100px;
+      --gap:24px;
+
+      --h1: clamp(28px, 4vw, 40px);
+      --h2: 14px;
+      --body: 15px;
+      --small: 13px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  line-height:1.45;
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
-      min-height: 100vh;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .topo-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Top Bar / Nav */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 6, 23, 0.95),
-        rgba(2, 6, 23, 0.7),
-        transparent
-      );
-    }
-
-    .hero-headshot {
-  width: 120px;
-  height: 120px;
-  border-radius: 999px;
-  object-fit: cover;
-  border: 1px solid rgba(31, 41, 55, 0.95);
-  box-shadow: var(--shadow-soft);
-  margin-bottom: 1rem;
+  background-image:
+    radial-gradient(1200px 700px at 85% 10%, rgba(105,167,255,.18), transparent 55%),
+    radial-gradient(900px 600px at 10% 20%, rgba(123,227,199,.12), transparent 55%),
+    url("assets/bg.jpg");          /* <-- your image */
+  background-repeat: no-repeat;     /* stops tiling */
+  background-size: cover;           /* fills screen */
+  background-position: center;      /* centers image */
+  background-attachment: fixed;     /* stays put on scroll */
+  background-color: #070a10;        /* fallback */
 }
 
-@media (max-width: 768px) {
-  .hero-headshot {
-    width: 104px;
-    height: 104px;
-  }
-}
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0.9rem 1.25rem 0.7rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+    a{color:inherit; text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{
+      max-width:var(--max);
+      margin: 36px auto 60px;
+      padding: 0 18px;
     }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
+    /* Top card */
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
-
-    .avatar-circle {
-      width: 34px;
-      height: 34px;
+    .hero::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 200px at 60% 0%, rgba(105,167,255,.22), transparent 60%),
+        radial-gradient(520px 220px at 10% 0%, rgba(123,227,199,.16), transparent 60%);
+      pointer-events:none;
+      opacity:.75;
+    }
+    .hero-inner{
+      position:relative;
+      padding: 22px 22px 18px;
+      display:flex;
+      gap: 18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .name{
+      flex:1 1 420px;
+      min-width:280px;
+    }
+    .name h1{
+      font-size: var(--h1);
+      margin:0 0 6px;
+      letter-spacing:.3px;
+    }
+    .tagline{
+      margin:0 0 10px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 16px;
+      color:var(--muted);
+      font-size: var(--small);
+      align-items:center;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      padding:7px 10px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #f97316, #4f46e5 55%, #22c55e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #f9fafb;
-      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.85);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      transition: transform .15s ease;
+    }
+    .chip:hover{transform: translateY(-1px); border-color: rgba(105,167,255,.35)}
+    .icon{
+      width:16px; height:16px; display:inline-block;
+      opacity:.9;
     }
 
-    .nav-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    .nav-tag {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease,
-        transform 0.12s ease;
-      cursor: pointer;
-    }
-
-    .nav-links a:hover {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(55, 65, 81, 0.8);
-      color: #e5e7eb;
-      transform: translateY(-1px);
-    }
-
-    /* Hero */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-      gap: 2.5rem;
-      margin-top: 1.75rem;
-      margin-bottom: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-title {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 0.85rem;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(to right, #a855f7, #4f46e5, #22c55e);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 36rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 1.25rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    .pill {
-      border-radius: 999px;
-      padding: 0.2rem 0.7rem;
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.25rem;
-    }
-
-    .btn-primary,
-    .btn-ghost {
-      padding: 0.6rem 1.1rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.18s ease,
-        border-color 0.18s ease;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 15% 0, #a855f7, #4f46e5);
-      border-color: rgba(129, 140, 248, 0.7);
-      box-shadow: 0 18px 40px rgba(79, 70, 229, 0.4);
-      color: white;
-      font-weight: 500;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 55px rgba(79, 70, 229, 0.55);
-    }
-
-    .btn-ghost {
-      background: rgba(15, 23, 42, 0.8);
-      border-color: rgba(55, 65, 81, 0.9);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 1);
-      transform: translateY(-1px);
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.12), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.12), transparent 55%),
-        linear-gradient(to bottom right, #020617, #020617, #020617f2);
-      border-radius: 22px;
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      padding: 1.4rem 1.5rem;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      gap: 1rem;
-    }
-
-    .hero-card-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .hero-card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .hero-card-tag {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .hero-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-    }
-
-    .hero-chip {
-      padding: 0.18rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-    }
-
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .hero-card-footer span {
-      white-space: nowrap;
-    }
-
-    .divider {
-      height: 1px;
-      border-radius: 999px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(55, 65, 81, 0.9),
-        transparent
-      );
-      margin: 2.2rem 0 1.5rem;
-    }
-
-    /* Section Layout */
-    section {
-      margin-bottom: 1.9rem;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .section-title {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #9ca3af;
-    }
-
-    .section-subtitle {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem 1.3rem;
-}
-    
-    .grid-3 {
+    /* Layout */
+    .grid{
+      margin-top: 18px;
       display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem 1.3rem;
+      grid-template-columns: 1.65fr 1fr;
+      gap: var(--gap);
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
     }
 
-    /* Cards */
-    .card {
-      background: radial-gradient(circle at top left, #0f172a, #020617);
-      border-radius: var(--card-radius);
-      border: 1px solid var(--border);
-      padding: 1rem 1.1rem 0.95rem;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
-    }
-    
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.5rem;
+    .card{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 35px rgba(0,0,0,.28);
+      padding: 18px 18px 16px;
     }
 
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.1rem;
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 12px;
+      padding-bottom:10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-title h2{
+      margin:0;
+      font-size: var(--h2);
+      letter-spacing: .18em;
+      text-transform:uppercase;
+      color: rgba(231,238,252,.92);
     }
 
-    .card-subtitle {
-      font-size: 0.82rem;
+    .summary{
       color: var(--muted);
+      font-size: var(--body);
+      margin:0;
     }
 
-    .card-meta {
-      font-size: 0.75rem;
+    /* Entries */
+    .entry{padding: 12px 0; border-bottom:1px solid var(--line)}
+    .entry:last-child{border-bottom:none; padding-bottom:2px}
+    .entry-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .role{
+      font-weight: 800;
+      letter-spacing:.2px;
+      margin:0;
+    }
+    .org{
+      margin: 2px 0 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: var(--small);
+    }
+    .meta{
       color: var(--muted);
-      text-align: right;
-      white-space: nowrap;
+      font-size: var(--small);
+      white-space:nowrap;
+    }
+    ul{
+      margin: 8px 0 0 18px;
+      padding:0;
+      color: rgba(231,238,252,.92);
+      font-size: var(--body);
+    }
+    li{margin: 6px 0}
+    .soft-skills{
+      color: var(--muted);
+      font-size: var(--body);
+      margin: 0;
     }
 
-    .card-body {
-      font-size: 0.82rem;
-      color: #d1d5db;
+    /* Education & lists */
+    .edu{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding: 12px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .edu:last-child{border-bottom:none}
+    .badge{
+      width:38px; height:38px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      color: rgba(231,238,252,.9);
+      flex: 0 0 auto;
     }
 
-    .card-body ul {
-      list-style: disc;
-      padding-left: 1.2rem;
-      margin-top: 0.35rem;
-      display: grid;
-      gap: 0.12rem;
-    }
+    .badge img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* keeps full logo visible */
+  padding: 6px;                  /* gives breathing room */
+  display:block;
+  filter: saturate(1.05);
+}
+    .edu h3{margin:0; font-size: 14px}
+    .edu p{margin:2px 0 0; color:var(--muted); font-size: var(--small)}
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.5rem;
-      font-size: 0.75rem;
+    /* Skill bars */
+    .skills{display:flex; flex-direction:column; gap:12px}
+    .skill{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
     }
-
-    .chip {
-      padding: 0.1rem 0.55rem;
+    .skill .label{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      font-size: var(--small);
+      color: rgba(231,238,252,.92);
+      font-weight: 700;
+    }
+    .bar{
+      height: 10px;
       border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(79, 70, 229, 0.5);
-      color: #c7d2fe;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      overflow:hidden;
     }
-
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.85rem 1.2rem;
-      font-size: 0.8rem;
-    }
-
-    .skill-group-title {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: #e5e7eb;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      color: var(--muted);
-    }
-
-    .skill-tag {
-      background: rgba(15, 23, 42, 0.9);
+    .fill{
+      height:100%;
+      width: 70%;
+      background: linear-gradient(90deg, rgba(105,167,255,.95), rgba(123,227,199,.95));
       border-radius: 999px;
-      padding: 0.1rem 0.55rem;
-      border: 1px solid rgba(31, 41, 55, 0.9);
     }
+    .note{color:var(--muted); font-size: var(--small); margin: 10px 0 0}
 
-    /* Contact / Footer */
-    .contact-card {
-      background: radial-gradient(circle at top right, #1d4ed8, transparent 60%),
-        radial-gradient(circle at bottom left, #22c55e, transparent 60%),
-        linear-gradient(to bottom right, #020617, #020617f2);
-      border-radius: 22px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      padding: 1.2rem 1.4rem;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      gap: 0.8rem;
-      font-size: 0.85rem;
-      margin-top: 0.6rem;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
-    }
-
-    .contact-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #d1d5db;
-      font-weight: 500;
-    }
-
-    .contact-link {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .contact-link span {
-      font-size: 0.78rem;
+    /* Footer */
+    .footer{
+      margin-top: 18px;
       color: var(--muted);
+      font-size: var(--small);
+      text-align:center;
+      opacity:.9;
     }
 
-    footer {
-      position: relative;
-      z-index: 1;
-      max-width: var(--max-width);
-      margin: 0.8rem auto 0;
-      padding: 0 1.25rem 1.25rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    /* Small Screen */
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-      }
-
-      .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 1.3rem;  /* side-to-side spacing */
-        row-gap: 2.2rem;     /* vertical spacing between rows */
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-card {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .skills-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-primary,
-      .btn-ghost {
-        justify-content: center;
-      }
+    /* Print */
+    @media print{
+      body{background:#fff; color:#111}
+      .hero,.card{box-shadow:none}
+      .hero::after{display:none}
+      .chip{background:transparent}
+      a{text-decoration:none}
     }
   </style>
 </head>
+
 <body>
-  <!-- Topographic contour background -->
-  <svg class="topo-bg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- Formation A: upper-left -->
-      <path d="M120,400 C130,250 250,140 380,150 C510,160 600,280 580,420 C560,560 430,640 300,620 C170,600 110,550 120,400Z" stroke="#6366f1" opacity="0.15" stroke-width="1"/>
-      <path d="M170,395 C180,275 280,185 380,195 C480,205 555,310 535,415 C515,520 410,585 310,570 C210,555 160,510 170,395Z" stroke="#6366f1" opacity="0.12" stroke-width="1"/>
-      <path d="M220,390 C228,310 305,240 380,248 C455,256 510,340 493,418 C476,496 395,540 325,528 C255,516 212,470 220,390Z" stroke="#6366f1" opacity="0.09" stroke-width="1"/>
-      <path d="M275,390 C280,335 325,295 380,300 C435,305 470,365 458,418 C446,471 398,500 348,492 C298,484 270,445 275,390Z" stroke="#6366f1" opacity="0.07" stroke-width="1"/>
-      <path d="M325,392 C328,360 350,340 380,343 C410,346 430,378 423,410 C416,442 393,458 368,453 C343,448 322,424 325,392Z" stroke="#6366f1" opacity="0.05" stroke-width="1"/>
+  <div class="wrap">
 
-      <!-- Formation B: center-right -->
-      <path d="M780,340 C800,175 925,75 1065,95 C1205,115 1305,260 1275,415 C1245,570 1105,660 960,630 C815,600 760,505 780,340Z" stroke="#22c55e" opacity="0.10" stroke-width="1"/>
-      <path d="M835,345 C850,215 950,135 1060,150 C1170,165 1245,285 1220,405 C1195,525 1085,595 970,570 C855,545 820,475 835,345Z" stroke="#22c55e" opacity="0.08" stroke-width="1"/>
-      <path d="M895,355 C905,255 978,195 1060,205 C1142,215 1195,315 1175,405 C1155,495 1065,545 985,528 C905,511 885,455 895,355Z" stroke="#22c55e" opacity="0.06" stroke-width="1"/>
-      <path d="M955,365 C962,295 1005,258 1060,263 C1115,268 1148,338 1135,405 C1122,472 1063,505 1010,493 C957,481 948,435 955,365Z" stroke="#22c55e" opacity="0.05" stroke-width="1"/>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="name">
+          <h1>Jared Alexander Dumale</h1>
+          <p class="tagline">Geospatial Professional | PhD scholar | Military Leader</p>
 
-      <!-- Formation C: lower-center -->
-      <path d="M380,790 C400,635 535,535 685,555 C835,575 945,715 915,870 C885,1025 745,1090 600,1060 C455,1030 360,945 380,790Z" stroke="#6366f1" opacity="0.12" stroke-width="1"/>
-      <path d="M430,785 C445,665 555,585 675,600 C795,615 880,730 855,855 C830,980 720,1030 615,1005 C510,980 415,905 430,785Z" stroke="#6366f1" opacity="0.09" stroke-width="1"/>
-      <path d="M490,782 C500,690 580,628 670,640 C760,652 825,742 805,840 C785,938 700,975 630,958 C560,941 480,874 490,782Z" stroke="#6366f1" opacity="0.07" stroke-width="1"/>
-      <path d="M545,782 C552,715 605,672 670,680 C735,688 780,755 765,830 C750,905 695,930 645,918 C595,906 538,849 545,782Z" stroke="#6366f1" opacity="0.05" stroke-width="1"/>
+          <div class="contact">
+            <a class="chip" href="tel:+15714550273" aria-label="Phone">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5h3l1.5 4-2 1.5c1.2 2.4 3 4.2 5.4 5.4L16 12.4l4 1.5v3c0 .8-.5 1.4-1.2 1.6-1.6.4-4.7.7-8.3-2.8-3.5-3.6-3.2-6.7-2.8-8.3.2-.7.8-1.2 1.6-1.2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              +1 571 455-0273
+            </a>
 
-      <!-- Formation D: top-right corner -->
-      <path d="M1250,150 C1262,45 1355,-5 1445,18 C1535,41 1585,135 1565,228 C1545,321 1462,370 1372,348 C1282,326 1238,255 1250,150Z" stroke="#a855f7" opacity="0.10" stroke-width="1"/>
-      <path d="M1295,162 C1303,85 1368,48 1430,65 C1492,82 1525,148 1510,218 C1495,288 1438,318 1378,302 C1318,286 1287,239 1295,162Z" stroke="#a855f7" opacity="0.07" stroke-width="1"/>
-      <path d="M1338,178 C1343,125 1382,100 1418,112 C1454,124 1472,168 1462,212 C1452,256 1418,275 1388,265 C1358,255 1333,231 1338,178Z" stroke="#a855f7" opacity="0.05" stroke-width="1"/>
+            <a class="chip" href="mailto:dumalej@gmail.com" aria-label="Email">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4.5 7.5 12 13l7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 18.5h13c.6 0 1-.4 1-1v-10c0-.6-.4-1-1-1h-13c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1Z" stroke="currentColor" stroke-width="1.6"/></svg>
+              dumalej@gmail.com
+            </a>
 
-      <!-- Formation E: left edge -->
-      <path d="M-40,660 C-18,545 78,470 168,492 C258,514 310,618 278,720 C246,822 152,870 68,840 C-16,810 -62,775 -40,660Z" stroke="#6366f1" opacity="0.08" stroke-width="1"/>
-      <path d="M15,668 C30,580 98,525 168,542 C238,559 278,640 255,718 C232,796 162,828 100,805 C38,782 0,756 15,668Z" stroke="#6366f1" opacity="0.06" stroke-width="1"/>
+            <a class="chip" href="https://www.dumale.me" target="_blank" rel="noreferrer" aria-label="Website">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M10 14a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 10a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              dumale.me
+            </a>
 
-      <!-- Formation F: bottom-right -->
-      <path d="M1100,695 C1122,585 1235,515 1358,548 C1481,581 1540,715 1510,838 C1480,961 1365,1015 1252,990 C1139,965 1078,805 1100,695Z" stroke="#22c55e" opacity="0.08" stroke-width="1"/>
-      <path d="M1155,710 C1170,622 1258,568 1350,595 C1442,622 1488,728 1462,818 C1436,908 1342,948 1260,928 C1178,908 1140,798 1155,710Z" stroke="#22c55e" opacity="0.06" stroke-width="1"/>
-      <path d="M1208,730 C1218,665 1282,625 1348,648 C1414,671 1445,748 1425,818 C1405,888 1335,912 1280,898 C1225,884 1198,795 1208,730Z" stroke="#22c55e" opacity="0.05" stroke-width="1"/>
-
-      <!-- Small scattered features -->
-      <path d="M50,120 C68,55 148,22 218,48 C288,74 318,158 288,228 C258,298 178,318 118,282 C58,246 32,185 50,120Z" stroke="#6366f1" opacity="0.06" stroke-width="0.8"/>
-      <path d="M88,138 C100,92 152,68 198,85 C244,102 262,158 242,208 C222,258 172,272 132,248 C92,224 76,184 88,138Z" stroke="#6366f1" opacity="0.04" stroke-width="0.8"/>
-
-      <path d="M1350,450 C1362,398 1408,372 1452,388 C1496,404 1518,455 1502,502 C1486,549 1438,568 1398,548 C1358,528 1338,502 1350,450Z" stroke="#a855f7" opacity="0.06" stroke-width="0.8"/>
-
-      <!-- Connecting ridgelines -->
-      <path d="M440,505 C478,548 518,618 558,682 C598,742 638,778 678,795" stroke="#6366f1" opacity="0.06" stroke-width="0.7"/>
-      <path d="M575,420 C648,432 748,402 838,368" stroke="#6366f1" opacity="0.05" stroke-width="0.7"/>
-      <path d="M1100,608 C1048,628 978,672 918,722 C858,772 818,812 798,848" stroke="#22c55e" opacity="0.05" stroke-width="0.7"/>
-      <path d="M288,228 C310,268 338,318 365,370" stroke="#6366f1" opacity="0.04" stroke-width="0.7"/>
-    </g>
-  </svg>
-
-  <header>
-    <div class="nav-inner">
-      <div class="nav-brand">
-        <div class="avatar-circle">JD</div>
-        <div>
-          <div class="nav-name">Jared Dumale</div>
-          <div class="nav-tag">Intelligence Officer · Colorado Springs, CO</div>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#presentations">Presentations</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#awards">Awards</a>
-        <a href="#training">Training</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div>
-        <h1 class="hero-title">
-          <span class="hero-highlight">Jared Dumale</span><br />
-          <span>Resume & Portfolio</span>
-        </h1>
-        <p class="hero-subtitle">
-          US military leader, geospatial educator, and intelligence professional seeking opportunity to contribute to a mission-driven organization.
-        </p>
-
-        
-
-        <div class="hero-meta">
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>Open to new opportunities</span>
+            <a class="chip" href="#projects" aria-label="Jump to Projects">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 11l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Projects
+            </a>
           </div>
-          <div class="pill">Active U.S. Security Clearance</div>
-          <div class="pill">Remote / On-site / Hybrid</div>
         </div>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn-primary">
-            Contact Me
-            <span>↗</span>
-          </a>
-          <!-- Replace resume.pdf with your actual file name or a Google Drive link -->
-          <a href="resume.pdf" class="btn-ghost" target="_blank" rel="noopener">
-            Download Résumé
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-header">
-        <h2 class="section-title">Experience</h2>
-      </div>
-        <!-- USAFA Instructor -->      
-      
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Instructor of Geosciences</div>
-              <div class="card-subtitle">United States Air Force Academy, CO, USA</div>
+        <div style="flex: 0 1 320px; min-width: 260px;">
+          <div class="card" style="margin:0; background: rgba(0,0,0,.12);">
+            <div class="section-title">
+              <h2>Summary</h2>
             </div>
-            <div class="card-meta">2024 – Present</div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li> <b>Deputy Director, Geospatial Intelligence</b> – Oversees the Academy’s GEOINT certificate program, coordinating curriculum, faculty engagement, and student progression.</li>
-              <li> <b>Course Director</b> – Designs and teaches advanced cultural and geospatial courses; leads curriculum development grounded in applied geographic analysis.</li>
-              <li> <b>Department Executive Officer (XO) </b>– Manages operations, staffing, and administrative workflow for a 46-member military/civilian faculty.</li>
-            </ul>
-              <br>
-              <i><b>Equivalent Civilian Function:</b></i> Lecturer • Senior Tutor • Academic Program Coordinator • Geospatial Intelligence Program Manager • Curriculum Designer
-          </div>
-        </article>
-<br>
-        <!-- Szntel Duty Officer-->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Senior Intelligence Duty Officer</div>
-              <div class="card-subtitle">618th Air Operatios Center, Scott AFB, IL, USA</div>
-            </div>
-            <div class="card-meta">2022 – 2024</div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li> Delivered operational intelligence for global air missions, provides decision-ready analysis for crisis response, logistics, and international operations.</li>
-              <li> Daily command briefer; responsible for updating military leadership on 24 – 72-hr global events and analysis.
-              <li> Led real-time intelligence monitoring and risk assessment teams to ensure safe & informed movement of personnel and resources, worldwide.</li>
-            </ul>        
-              <br>
-              <i><b>Equivalent Civilian Function:</b> Intelligence Operations Lead • Situational Awareness & Risk Analyst • Operational Threat Supervisor.</i>
-          </div>
-        </article>
-<br>
-        <!-- Chief, Unit Support -->
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Chief, Intelligence Unit Support</div>
-              <div class="card-subtitle">Headquarters Air Mobility Command, Scott AFB, IL, USA</div>
-            </div>
-            <div class="card-meta">2019 – 2022</div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li>Managed processes & policy to organize, train, and equip 114 intelligence units worldwide.</li>
-              <li>Led training, readiness tracking, and administrative workflows to ensure analysts remain certified, equipped, and mission-ready.</li>
-              <li>Coordinated intelligence support requirements with leadership, operational planners, and external agencies.</li>
-              <li>Served 6-month tour at the 609th Air Operations Center as an Intelligence Duty Officer monitioring risks to mobility air operations in Southwest Asia. </li>
-            </ul>
-              <br>
-              <i><b>Equivalent Civilian Function:</b> Operations Manager • Intelligence Support Manager • Risk & Analysis Operations Lead</i>
-          </div>
-        </article>
-<br>
-        <!-- Avionics NCO -->
-        <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Noncommissioned Officer (NCO)</div>
-                <div class="card-subtitle">Davis-Monthan AFB, AZ, USA</div>
-              </div>
-              <div class="card-meta">2013 – 2019</div>
-            </div>
-            <div class="card-body">
-              <ul>
-                <li>Avionics Specialist on HC-130J Combat Search and Rescue aircraft supporting combat, training, and humanitarian missions worldwide.
-                <li>Served as NCO in charge of a 10-person avionics section, overseeing maintenance operations, troubleshooting, and mission-ready systems support for global taskings</li>
-              </ul>
-              <br>
-              <i><b>Equivalent Civilian Function:</b> Avionics Maintenance Supervisor • Technical Operations Manager • Aircraft Systems Maintenance Lead • Aviation Maintenance Team Leader</i>
-            </div>
-          </article>
-        <!-- Add more experience cards as needed -->
-      </div>
-    </section>
-
-    <!-- PRESENTATIONS & APPEARANCES -->
-    <section id="presentations">
-      <div class="section-header">
-        <h2 class="section-title">Presentations & Appearances</h2>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Panelist</div>
-              <div class="card-subtitle">London, UK</div>
-            </div>
-            <div class="card-meta">2025</div>
-          </div>
-          <div class="card-body">
-            <p><i>Leveraging Breakthroughs in AI to Manage, Process, and Protect Space Data, Infrastructure, and Mission Outcomes</i></p>
-            <ul>
-              <li>Invited panelist at an international defense geospatial conference in London, contributing to professional dialogue on AI integration, data governance, and mission assurance in space and geospatial domains.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Research Seminar</div>
-              <div class="card-subtitle">United States Air Force Academy, CO</div>
-            </div>
-            <div class="card-meta">2025</div>
-          </div>
-          <div class="card-body">
-            <p><i>Using GeoAI to Enhance Air Operations in the Future Battlespace</i></p>
-            <ul>
-              <li>Delivered a research seminar to senior academic leadership outlining applied GeoAI concepts, operational use cases, and implications for future air and space operations.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Panelist</div>
-              <div class="card-subtitle">London, UK</div>
-            </div>
-            <div class="card-meta">2026</div>
-          </div>
-          <div class="card-body">
-            <p><i>From Compass to Cloud to Claude: Reimagining Collaborative Geospatial Intelligence Education for Future Missions</i></p>
-            <ul>
-              <li>Invited panelist to discuss modernizing geospatial intelligence education through cloud platforms, AI-enabled workflows, and cross-disciplinary collaboration to meet emerging mission demands.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Academic Poster Presentation</div>
-              <div class="card-subtitle">Denver, CO</div>
-            </div>
-            <div class="card-meta">2026</div>
-          </div>
-          <div class="card-body">
-            <p><i>GEOINT&sup3;: Reframing Geospatial Intelligence Education Across Concepts, Representations, and Reasoning</i></p>
-            <ul>
-              <li>Poster presenting a framework for geospatial intelligence education, integrating conceptual understanding, spatial representation, and analytical reasoning.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">GeoAI Research Project</div>
-              <div class="card-subtitle">
-                Capstone Research for Masters Degree · The Pennsylvania State University
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p>
-              Early research in utilizing Large Language Models (LLMs) to enhance &amp; expedite intelligence analysis, simultaneously visualizing on a geospatial visualizer for predictive threat analysis. Designed a proof-of-concept LLM platform linking intelligence reports to designated points on a map and explored the feasibility of using LLMs &amp; GPTs to analyze &amp; interpret images of maps/charts denoting various ballistic missile ranges.
+            <p class="summary">
+              Geospatial intelligence expert and educator with broad experience in higher education and defense collaboration.
+              Skilled in developing advanced curricula and applying AI-driven geospatial analysis to enhance operational decisions.
+              Currently transitioning from military service to the civil and public sectors, bringing a rich background in military
+              geospatial operations to drive strategic outcomes in new environments.
             </p>
-            <div class="chip-row">
-              <span class="chip">Python</span>
-              <span class="chip">LLMs</span>
-              <span class="chip">Data Visualization</span>
-              <span class="chip">APIs</span>
-            </div>
           </div>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">COVEY 535 Geospatial Recovery Study</div>
-              <div class="card-subtitle">
-                Faculty Supervisor for Undergraduate Research · United States Air Force Academy
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li>Guided 1 undergraduate researcher in a geospatial study supporting recovery of a missing USAF aircraft in Laos using historical imagery and terrain modeling.</li>
-              <li>Led geospatial analysis project integrating 3 data types to support recovery of missing USAF aircraft in Laos, involving coordination with 3 major institutions.</li>
-            </ul>
-            <div class="chip-row">
-              <span class="chip">ArcGIS Pro</span>
-              <span class="chip">Remote Sensing</span>
-              <span class="chip">Geospatial Intelligence</span>
-              <span class="chip">Terrain Modeling</span>
-            </div>
-          </div>
-        </article>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <div class="section-header">
-        <h2 class="section-title">Education</h2>
-      </div>
+    <main class="grid" aria-label="Resume content">
+      <!-- LEFT COLUMN -->
+      <section class="card">
+        <div class="section-title"><h2>Work Experience</h2></div>
 
-      <div class="grid-3">
-        <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">PhD, Geographic Education</div>
-                <div class="card-subtitle">
-                  Texas State University · San Marcos, TX
-                </div>
-              </div>
-              <div class="card-meta">2025 – Current</div>
-            </div>
-            <div class="card-body">
-              <p>Research examines geospatial education, curriculum design, and the development of future military and civilian geospatial leaders.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">MGIS, Geospatial Intelligence</div>
-                <div class="card-subtitle">
-                  The Pennsylvania State University · University Park, PA
-                </div>
-              </div>
-              <div class="card-meta">2021 – 2023</div>
-            </div>
-            <div class="card-body">
-                    <p>Masters Degree focused on geospatial intelligence. Also a Graduate Certificate in Geospatial Analytics and USGIF GEOINT Certificate</p>
-            </div>
-          </article>
-    
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">BS, Geography</div>
-              <div class="card-subtitle">
-                Park University · Parkville, MO
-              </div>
+              <p class="role">Course Director and Senior Instructor</p>
+              <p class="org">United States Air Force Academy</p>
             </div>
-            <div class="card-meta">2016 – 2018</div>
+            <div class="meta">2024 – Present</div>
           </div>
-          <div class="card-body">
-            <p>Undergraduate degree focused on human geography, spatial analysis, and environmental Systems.</p>
-          </div>
+          <ul>
+            <li>Course Director: designed curriculum, assessments, and learning objectives for upper-division courses in Cultural Geography and Geospatial Intelligence (&gt;750 students).</li>
+            <li>Deputy Director for Geospatial Intelligence Certificate Program; oversaw governance, accreditation, and partnerships.</li>
+            <li>Principal liaison to the U.S. Geospatial Intelligence Foundation (USGIF).</li>
+            <li>Authored 2x annual, 1x five-year, and 1x six year program self-studies, managing data collection, assessment metrics, and compliance documentation to secure and maintain external accreditation.</li>
+            <li>Executive Officer; coordinated 44 faculty members and led operations planning in a complex academic setting.</li>
+            <li>Supervised undergraduate research in terrain modeling for locating a missing USAF aircraft and in GIS application development for student career mapping.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">AAS, Avionic Systems Technology</div>
-              <div class="card-subtitle">Community College of the Air Force  · Maxwell AFB, AL</div>
+              <p class="role">Senior Intelligence Duty Officer &amp; Operations Briefer</p>
+              <p class="org">United States Air Force</p>
             </div>
-            <div class="card-meta">2014-2016</div>
+            <div class="meta">2021 – 2024</div>
           </div>
-          <div class="card-body">
-        <p>Vocational degree in avionics maintenance, aircraft systems, and aerospace electronics</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- AWARDS -->
-    <section id="awards">
-      <div class="section-header">
-        <h2 class="section-title">Awards</h2>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Competitive Doctoral Scholarship in Geospatial Intelligence</div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p>Received the Stu Shea USGIF Endowed Scholarship; a $15,000 scholarship awarded annually to one Ph.D. student studying geospatial topics.</p>
-          </div>
+          <ul>
+            <li>Air Operations duty officer, delivering critical analysis &amp; briefings for &gt;30,000 air missions.</li>
+            <li>Deployed intelligence officer providing threat monitoring for humanitarian airlift and refueling operations in Southwest Asia.</li>
+            <li>Fused intelligence across foreign policy, defense, signals, and geospatial domains to support joint &amp; multinational operations.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">Meritorious Service Award</div>
+              <p class="role">Chief, Intelligence Unit Support</p>
+              <p class="org">United States Air Force</p>
             </div>
+            <div class="meta">2019 – 2021</div>
           </div>
-          <div class="card-body">
-            <p>Awarded for applied geospatial and intelligence contributions supporting combat search and rescue operations and for building and deploying analytical tools that automated threat assessment for 13,000 air missions across 200+ high-risk locations.</p>
-          </div>
+          <ul>
+            <li>Led a 6-person team developing policy for organizing, training, and equipping 114 worldwide intelligence units.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">Competitive Research Funding Award</div>
-              <div class="card-subtitle">Quality of Analysis Program</div>
+              <p class="role">Noncommissioned Officer</p>
+              <p class="org">United States Air Force</p>
             </div>
+            <div class="meta">2013 – 2019</div>
           </div>
-          <div class="card-body">
-            <p>Two-time selectee for competitive research funding ($7,000) supporting studies on U.S. and partner-nation geospatial analysis capabilities.</p>
-          </div>
+          <ul>
+            <li>Early career technical lead for aircraft avionics systems on Search &amp; Rescue aircraft; responsible for system reliability, mission readiness, and coordination between aircrew and maintenance teams.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Distinguished Graduate, Military Leadership School</div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p>Ranked in the top tier of a 60-person cohort based on academic performance, leadership evaluation, and peer assessment.</p>
-          </div>
-        </article>
+        <div class="section-title" style="margin-top:18px;"><h2>Soft Skills</h2></div>
+        <p class="soft-skills">
+          Customer Engagement, Time Management, Adaptability, Lateral Thinking, Operational Planning,
+          Training &amp; Curriculum Development, Teamwork (leadership &amp; followership)
+        </p>
+      </section>
 
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">Emergency Response & Incident Leadership Award</div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p>Awarded for emergency response leadership and coordination of medical triage and airlift following a civilian mass-casualty incident.</p>
-          </div>
-        </article>
-      </div>
-    </section>
+      <!-- RIGHT COLUMN -->
+      <aside class="card">
+        <div class="section-title"><h2>Education</h2></div>
 
-    <!-- VOLUNTEERING -->
-    <section id="volunteering">
-      <div class="section-header">
-        <h2 class="section-title">Volunteering</h2>
-      </div>
-
-      <article class="card">
-        <div class="card-header">
+        <div class="edu">
+          <div class="badge">TSU</div>
           <div>
-            <div class="card-title">Mapper & Spatial Analyst</div>
-            <div class="card-subtitle">Humanitarian OpenStreetMap Team</div>
+            <h3>PhD, Geographic Education</h3>
+            <p><strong>Texas State University</strong> • 2025 – 2028<br/>Early-stage doctoral researcher; expected completion mid-2028</p>
           </div>
-          <div class="card-meta">2024 – Present</div>
         </div>
-        <div class="card-body">
-          <p>Contributing geospatial mapping and spatial analysis to support humanitarian response and disaster relief efforts through the Humanitarian OpenStreetMap Team (HOT).</p>
+
+        <div class="edu">
+          <div class="badge">PSU</div>
+          <div>
+            <h3>Master of Geographic Information Systems (MGIS)</h3>
+            <p><strong>The Pennsylvania State University</strong> • 2021 – 2023<br/>Graduate Certificate in Geospatial Analytics<br/>USGIF Graduate Certificate in Geospatial Intelligence</p>
+          </div>
         </div>
-      </article>
-    </section>
 
-    <!-- TRAINING / COURSES -->
-    <section id="training">
-      <div class="section-header">
-        <h2 class="section-title">Training / Courses</h2>
-      </div>
+        <div class="edu">
+          <div class="badge">PARK</div>
+          <div>
+            <h3>BS, Geography</h3>
+            <p><strong>Park University</strong> • 2016 – 2018</p>
+          </div>
+        </div>
 
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-header">
+        <div class="edu">
+          <div class="badge"><img src="assets/logos/ccaf.png" alt="Community College of the Air Force logo"></div>
+          <div>
+            <h3>AAS, Avionic Systems Technology</h3>
+            <p><strong>Community College of the Air Force</strong> • 2015 – 2016</p>
+          </div>
+        </div>
+
+        <div class="section-title" style="margin-top:18px;"><h2>Hard Skills</h2></div>
+        <div class="skills">
+          <div class="skill">
+            <div class="label"><span>Geographic Information Systems (ArcGIS, QGIS, OpenStreetMap)</span><span>Advanced</span></div>
+            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Data Analysis &amp; Automation (Python, Pandas, NumPy, SQL)</span><span>Advanced</span></div>
+            <div class="bar"><div class="fill" style="width: 85%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Data Visualization (R, Power BI, Tableau)</span><span>Proficient</span></div>
+            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Version Control &amp; Dev Tools (GitHub, VS Code)</span><span>Proficient</span></div>
+            <div class="bar"><div class="fill" style="width: 72%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Programming &amp; Web Development (JavaScript, HTML, CSS)</span><span>Proficient</span></div>
+            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Productivity (Excel, PowerPoint, Teams/SharePoint)</span><span>Advanced</span></div>
+            <div class="bar"><div class="fill" style="width: 82%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>AI-Assisted Workflows (ChatGPT, Claude)</span><span>Proficient</span></div>
+            <div class="bar"><div class="fill" style="width: 68%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Design &amp; Media (Adobe Creative Suite, Canva)</span><span>Proficient</span></div>
+            <div class="bar"><div class="fill" style="width: 66%"></div></div>
+          </div>
+        </div>
+        <p class="note">Tip: adjust the % widths to match how you want to “signal” depth.</p>
+      </aside>
+
+      <!-- FULL WIDTH SECTIONS -->
+      <section class="card" style="grid-column: 1 / -1;">
+        <div class="section-title"><h2>Presentations &amp; Appearances</h2></div>
+
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">AMC Staff Orientation Course</div>
+              <p class="role">Panelist</p>
+              <p class="org">London, UK</p>
             </div>
+            <div class="meta">2025</div>
           </div>
-          <div class="card-body">
-            <p>Basic command relationships, administrative tools, and systems &amp; processing for organizations with &gt;1K members.</p>
-          </div>
+          <ul>
+            <li><em>Leveraging Breakthroughs in AI to Manage, Process, and Protect Space Data, Infrastructure, and Mission Outcomes</em> — Invited panelist at an international defense geospatial conference, discussing AI integration, data governance, and mission assurance.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">Basic Intelligence Officers Course</div>
+              <p class="role">Research Seminar</p>
+              <p class="org">United States Air Force Academy, CO</p>
             </div>
+            <div class="meta">2025</div>
           </div>
-          <div class="card-body">
-            <p>Principles, methods, and practices of analytics &amp; communications skills needed for careers in intelligence, cyber, and space missions.</p>
-          </div>
+          <ul>
+            <li><em>Using GeoAI to Enhance Air Operations in the Future Battlespace</em> — Delivered a research seminar to senior academic leadership outlining applied GeoAI concepts, use cases, and implications for future air and space operations.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">FADE Academy</div>
+              <p class="role">Panelist</p>
+              <p class="org">London, UK</p>
             </div>
+            <div class="meta">2026</div>
           </div>
-          <div class="card-body">
-            <p>2-week intensive National Reconnaissance Office (NRO) program that develops and applies methodologies for utilizing intelligence data to provide streamlined access to data from national, tactical, and open sources.</p>
-          </div>
+          <ul>
+            <li><em>From Compass to Cloud to Claude: Reimagining Collaborative Geospatial Intelligence Education for Future Missions</em> — Invited panelist on modernizing GEOINT education via cloud platforms and AI-enabled workflows.</li>
+          </ul>
         </article>
 
-        <article class="card">
-          <div class="card-header">
+        <article class="entry">
+          <div class="entry-head">
             <div>
-              <div class="card-title">HC-130J Avionics Craftsman Courses</div>
+              <p class="role">Academic Poster Presentation</p>
+              <p class="org">Denver, CO</p>
             </div>
+            <div class="meta">2026</div>
           </div>
-          <div class="card-body">
-            <p>Multiple courses preparing graduates to expertly maintain, troubleshoot, and repair the communication, navigation, and Guidance &amp; Control systems of the C-130J aircraft.</p>
-          </div>
+          <ul>
+            <li><em>GEOINT³: Reframing Geospatial Intelligence Education Across Concepts, Representations, and Reasoning</em> — Presented a framework integrating conceptual understanding, spatial representation, and analytical reasoning.</li>
+          </ul>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-header">
-        <h2 class="section-title">Skills</h2>
-      </div>
+      <section class="card" id="projects">
+        <div class="section-title"><h2>Projects</h2></div>
 
-      <div class="skills-grid">
-        <div>
-          <div class="skill-group-title">Technical</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Geospatial Analysis</span>
-            <span class="skill-tag">Remote Sensing</span>
-            <span class="skill-tag">Intelligence Analysis</span>
-            <span class="skill-tag">Data Visualization</span>
-            <span class="skill-tag">Threat Analysis</span>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <p class="role">GeoAI Research Project</p>
+              <p class="org">The Pennsylvania State University</p>
+            </div>
+            <div class="meta">Capstone (MGIS)</div>
           </div>
-        </div>
-        <div>
-          <div class="skill-group-title">Tools</div>
-          <div class="skill-tags">
-            <span class="skill-tag">ArcGIS Pro</span>
-            <span class="skill-tag">Open Street Maps</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Adobe Creative Suite</span>
-            <span class="skill-tag">Microsoft Office</span>
-            <span class="skill-tag">GitHub</span>
+          <ul>
+            <li>Early research using Large Language Models (LLMs) to enhance and expedite intelligence analysis while visualizing outputs on a geospatial visualizer for predictive threat analysis.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <p class="role">COVEY 535 Geospatial Recovery Study</p>
+              <p class="org">United States Air Force Academy</p>
+            </div>
+            <div class="meta">Faculty Supervisor</div>
           </div>
-        </div>
-        <div>
-          <div class="skill-group-title">Soft Skills</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Communication</span>
-            <span class="skill-tag">Military Leadership</span>
-            <span class="skill-tag">Collaboration</span>
-            <span class="skill-tag">Mentoring</span>
-            <span class="skill-tag">Cross-Cultural Competence</span>
-            <span class="skill-tag">Instruction & Curriculum Design</span>
+          <ul>
+            <li>Guided undergraduate research supporting recovery of a missing USAF aircraft in Laos using historical imagery and terrain modeling.</li>
+            <li>Led project integrating three data types and coordinating with three major institutions.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="section-title"><h2>Volunteering</h2></div>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <p class="role">Mapper &amp; Spatial Analyst</p>
+              <p class="org">Humanitarian OpenStreetMap Team</p>
+            </div>
+            <div class="meta">2024 – Present</div>
           </div>
+          <ul>
+            <li>Replace this line with a one-sentence impact statement (e.g., crisis response mapping, features added, regions supported).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card" style="grid-column: 1 / -1;">
+        <div class="section-title"><h2>Awards</h2></div>
+        <div class="entry">
+          <ul>
+            <li><strong>Competitive Doctoral Scholarship in Geospatial Intelligence</strong> — Stu Shea USGIF Endowed Scholarship ($15,000).</li>
+            <li><strong>Meritorious Service Award</strong> — Applied geospatial and intelligence contributions; automated threat assessment supporting 13,000 air missions across 200+ locations.</li>
+            <li><strong>Competitive Research Funding Award (Quality of Analysis Program)</strong> — Two-time selectee ($7,000) supporting studies on U.S. and partner-nation geospatial analysis capabilities.</li>
+            <li><strong>Distinguished Graduate, Military Leadership School</strong> — Top tier of a 60-person cohort.</li>
+            <li><strong>Emergency Response &amp; Incident Leadership Award</strong> — Leadership in medical triage and airlift coordination after a civilian mass-casualty incident.</li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">
-          Quick ways to reach you or explore more of your work.
-        </p>
-      </div>
-
-      <div class="contact-card">
-        <p>
-          If you’d like to talk about a role, collaboration, or project, the
-          easiest way to reach me is by email. I’m also active on the platforms
-          below.
-        </p>
-
-        <div class="contact-row">
-          <!-- Email -->
-          <a href="mailto:dumalej@gmail.com" class="contact-link">
-            <span>Email Me</span>
-          </a>
-
-          <!-- LinkedIn -->
-          <a
-            href="https://www.linkedin.com/in/jareddumale"
-            target="_blank"
-            rel="noopener"
-            class="contact-link"
-          ><span>LinkedIn</span>
-          </a>         
+      <section class="card" style="grid-column: 1 / -1;">
+        <div class="section-title"><h2>Training / Courses</h2></div>
+        <div class="entry">
+          <ul>
+            <li><strong>AMC Staff Orientation Course</strong> — Command relationships, admin tools, and processing for organizations with &gt;1K members.</li>
+            <li><strong>Basic Intelligence Officers Course</strong> — Analytics and communication practices for intelligence, cyber, and space missions.</li>
+            <li><strong>FADE Academy</strong> — Intensive NRO program applying methodologies for streamlined access to national, tactical, and open-source data.</li>
+            <li><strong>HC-130J Avionics Craftsman Courses</strong> — Advanced maintenance and troubleshooting for C-130J communication, navigation, and Guidance &amp; Control systems.</li>
+          </ul>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <span>© <span id="year"></span> Jared Dumale. All rights reserved.</span>
-    <span>Built with HTML &amp; CSS · Hosted on GitHub Pages</span>
-  </footer>
+    </main>
+
+    <div class="footer">
+      © <span id="year"></span> Jared Alexander Dumale • Built with HTML/CSS • <a href="#" onclick="window.print();return false;">Print</a>
+    </div>
+  </div>
 
   <script>
-    // Update year automatically
-    document.getElementById("year").textContent =
-      new Date().getFullYear().toString();
-
-    // Smooth scroll for internal links (basic, no external libs)
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const targetId = link.getAttribute("href").substring(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-          e.preventDefault();
-          window.scrollTo({
-            top: target.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
