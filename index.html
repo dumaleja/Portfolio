@@ -75,12 +75,12 @@ body::before{
     .wrap{
       max-width:var(--max);
       margin: 36px auto 60px;
-      padding: 0 18px;
+      padding:10px;
     }
 
     /* Top card */
     .hero{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      background: linear-gradient(180deg, rgba(234, 221, 221, 0.06), rgba(255,255,255,.02));
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -96,18 +96,18 @@ body::before{
       pointer-events:none;
       opacity:.75;
     }
+    
     .hero-inner{
       position:relative;
-      padding: 22px 22px 18px;
+      padding: 10px 10px 10px;
       display:flex;
       gap: 22px;
       align-items:stretch;
     }
     .hero-left{
-      flex:1 1 0%;
       display:flex;
       flex-direction:column;
-      gap:16px;
+      gap:10px;
       min-width:0;
     }
     .hero-right{
@@ -119,7 +119,8 @@ body::before{
       width:100%;
       height: 100%;
       border-radius:var(--radius);
-      border:1px solid var(--line);      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);      
+      background:rgba(255,255,255,.03);
       overflow: hidden;
       display:flex;
       align-items:center;
@@ -184,10 +185,11 @@ body::before{
     }
 
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));      
-      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(234, 221, 221, 0.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);      
+      box-shadow: var(--shadow);
+      position: relative;      
       padding: 18px 18px 16px;
     }
 
@@ -339,7 +341,6 @@ body::before{
 
 <body>
   <div class="wrap">
-
     <header class="hero">
       <div class="hero-inner">
         <div class="hero-left">
