@@ -100,13 +100,46 @@ body::before{
       position:relative;
       padding: 22px 22px 18px;
       display:flex;
-      gap: 18px;
-      align-items:flex-start;
-      flex-wrap:wrap;
+      gap: 22px;
+      align-items:stretch;
+    }
+    .hero-left{
+      flex:1 1 0%;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      min-width:0;
+    }
+    .hero-right{
+      flex:0 0 220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .portrait-placeholder{
+      width:100%;
+      max-width:200px;
+      aspect-ratio:3/4;
+      border-radius:var(--radius);
+      border:2px dashed var(--line);
+      background:rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:var(--small);
+      text-align:center;
+      padding:16px;
+    }
+    .portrait-placeholder img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:var(--radius);
     }
     .name{
-      flex:1 1 420px;
-      min-width:280px;
+      flex:1 1 auto;
+      min-width:0;
     }
     .name h1{
       font-size: var(--h1);
@@ -151,6 +184,8 @@ body::before{
     }
     @media (max-width: 920px){
       .grid{grid-template-columns: 1fr}
+      .hero-inner{flex-direction:column}
+      .hero-right{flex:0 0 auto}
     }
 
     .card{
@@ -312,34 +347,34 @@ body::before{
 
     <header class="hero">
       <div class="hero-inner">
-        <div class="name">
-          <h1>Jared Alexander Dumale</h1>
-          <p class="tagline">Geospatial Professional | PhD scholar | Military Leader</p>
+        <div class="hero-left">
+          <div class="name">
+            <h1>Jared Alexander Dumale</h1>
+            <p class="tagline">Geospatial Professional | PhD scholar | Military Leader</p>
 
-          <div class="contact">
-            <a class="chip" href="tel:+15714550273" aria-label="Phone">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5h3l1.5 4-2 1.5c1.2 2.4 3 4.2 5.4 5.4L16 12.4l4 1.5v3c0 .8-.5 1.4-1.2 1.6-1.6.4-4.7.7-8.3-2.8-3.5-3.6-3.2-6.7-2.8-8.3.2-.7.8-1.2 1.6-1.2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              +1 571 455-0273
-            </a>
+            <div class="contact">
+              <a class="chip" href="tel:+15714550273" aria-label="Phone">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5h3l1.5 4-2 1.5c1.2 2.4 3 4.2 5.4 5.4L16 12.4l4 1.5v3c0 .8-.5 1.4-1.2 1.6-1.6.4-4.7.7-8.3-2.8-3.5-3.6-3.2-6.7-2.8-8.3.2-.7.8-1.2 1.6-1.2Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                +1 571 455-0273
+              </a>
 
-            <a class="chip" href="mailto:dumalej@gmail.com" aria-label="Email">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4.5 7.5 12 13l7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 18.5h13c.6 0 1-.4 1-1v-10c0-.6-.4-1-1-1h-13c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              dumalej@gmail.com
-            </a>
+              <a class="chip" href="mailto:dumalej@gmail.com" aria-label="Email">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4.5 7.5 12 13l7.5-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 18.5h13c.6 0 1-.4 1-1v-10c0-.6-.4-1-1-1h-13c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1Z" stroke="currentColor" stroke-width="1.6"/></svg>
+                dumalej@gmail.com
+              </a>
 
-            <a class="chip" href="https://www.dumale.me" target="_blank" rel="noreferrer" aria-label="Website">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M10 14a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 10a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              dumale.me
-            </a>
+              <a class="chip" href="https://www.dumale.me" target="_blank" rel="noreferrer" aria-label="Website">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M10 14a5 5 0 0 1 0-7l1-1a5 5 0 0 1 7 7l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 10a5 5 0 0 1 0 7l-1 1a5 5 0 0 1-7-7l1-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                dumale.me
+              </a>
 
-            <a class="chip" href="#projects" aria-label="Jump to Projects">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 11l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Projects
-            </a>
+              <a class="chip" href="#projects" aria-label="Jump to Projects">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 6v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 11l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Projects
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div style="flex: 0 1 320px; min-width: 260px;">
           <div class="card" style="margin:0; background: rgba(0,0,0,.12);">
             <div class="section-title">
               <h2>Summary</h2>
@@ -350,6 +385,13 @@ body::before{
               Currently transitioning from military service to the civil and public sectors, bringing a rich background in military
               geospatial operations to drive strategic outcomes in new environments.
             </p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="portrait-placeholder">
+            <!-- Replace this div's contents with: <img src="your-portrait.jpg" alt="Jared Alexander Dumale"> -->
+            Portrait
           </div>
         </div>
       </div>
