@@ -35,15 +35,40 @@
   color: var(--text);
   line-height:1.45;
 
+  /* keep your current background stack */
   background-image:
     radial-gradient(1200px 700px at 85% 10%, rgba(105,167,255,.18), transparent 55%),
-    radial-gradient(900px 600px at 10% 20%, rgba(123,227,199,.12), transparent 55%),
-    url("assets/bg.jpg");          /* <-- your image */
-  background-repeat: no-repeat;     /* stops tiling */
-  background-size: cover;           /* fills screen */
-  background-position: center;      /* centers image */
-  background-attachment: fixed;     /* stays put on scroll */
-  background-color: #070a10;        /* fallback */
+    radial-gradient(900px 600px at 10% 20%, rgba(105, 112, 110, 0.12), transparent 55%),
+    url("assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #000000;
+  position: relative; /* needed for layering */
+}
+
+/* SVG overlay layer */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: url("Assets/Background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;       /* or 'contain' if you want to see all of it */
+  background-position: center;
+
+  opacity: 0.10;                /* faintness control */
+  filter: brightness(0.3) contrast(.) saturate(10); /* darker + subdued */
+}
+
+/* ensure your page content stays above the overlay */
+.wrap{
+  position: relative;
+  z-index: 1;
 }
 
     a{color:inherit; text-decoration:none}
@@ -209,26 +234,27 @@
     }
     .edu:last-child{border-bottom:none}
     .badge{
-      width:38px; height:38px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,.22);
+      width: 54px;          /* increase size */
+      height: 54px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight: 900;
-      color: rgba(231,238,252,.9);
       flex: 0 0 auto;
+
+      /* remove the “square” look */
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+      padding: 0;
     }
 
     .badge img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;           /* keeps full logo visible */
-  padding: 6px;                  /* gives breathing room */
-  display:block;
-  filter: saturate(1.05);
-}
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* keeps entire logo visible */
+      display:block;
+    }
     .edu h3{margin:0; font-size: 14px}
     .edu p{margin:2px 0 0; color:var(--muted); font-size: var(--small)}
 
@@ -338,18 +364,19 @@
         <article class="entry">
           <div class="entry-head">
             <div>
-              <p class="role">Course Director and Senior Instructor</p>
+              <p class="role">Senior Instructor & Deputy Director of Geospatial Intelligence</p>
               <p class="org">United States Air Force Academy</p>
             </div>
             <div class="meta">2024 – Present</div>
           </div>
           <ul>
-            <li>Course Director: designed curriculum, assessments, and learning objectives for upper-division courses in Cultural Geography and Geospatial Intelligence (&gt;750 students).</li>
-            <li>Deputy Director for Geospatial Intelligence Certificate Program; oversaw governance, accreditation, and partnerships.</li>
+            <li><b>Course Director:</b> Designed curriculum (in-person and e-learning), assessments, and learning objectives for advanced courses in Cultural Geography and Geospatial Intelligence.</li>
+            <li><b>Deputy Director, Geospatial Intelligence Certificate Program:</b> Oversaw training, governance, accreditation, and partnerships.</li>
             <li>Principal liaison to the U.S. Geospatial Intelligence Foundation (USGIF).</li>
-            <li>Authored 2x annual, 1x five-year, and 1x six year program self-studies, managing data collection, assessment metrics, and compliance documentation to secure and maintain external accreditation.</li>
-            <li>Executive Officer; coordinated 44 faculty members and led operations planning in a complex academic setting.</li>
-            <li>Supervised undergraduate research in terrain modeling for locating a missing USAF aircraft and in GIS application development for student career mapping.</li>
+            <li>Led initiative to update and expand undergraduate certificate program to accommodate additional majors while preserving academic rigor; increased enrollment by 75%.</li>
+            <li>Academic advisor for 11 students: provided structured career coaching and encouraged continuous learning opportunities.</li>
+            <li>Authored multiple program self-studies, managing data collection, metrics, and compliance documentation to successfully secure external accreditation.</li>
+            <li><b>Executive Officer:</b> managed administrative load for 44-person department; led operations planning in complex academic setting.</li>
           </ul>
         </article>
 
@@ -390,7 +417,7 @@
             <div class="meta">2013 – 2019</div>
           </div>
           <ul>
-            <li>Early career technical lead for aircraft avionics systems on Search &amp; Rescue aircraft; responsible for system reliability, mission readiness, and coordination between aircrew and maintenance teams.</li>
+            <li>Subject matter expert and team leader for 8-person avionics shop; maintained, troubleshot, and repaired flight control systems on Search &amp; Rescue aircraft; responsible for system reliability, mission readiness, and coordination between aircrew and maintenance teams.</li>
           </ul>
         </article>
 
@@ -406,23 +433,28 @@
         <div class="section-title"><h2>Education</h2></div>
 
         <div class="edu">
-          <div class="badge">TSU</div>
+          <div class="badge"><img src="assets/TSU.png"></div>
           <div>
             <h3>PhD, Geographic Education</h3>
-            <p><strong>Texas State University</strong> • 2025 – 2028<br/>Early-stage doctoral researcher; expected completion mid-2028</p>
+            <p><strong>Texas State University</strong> • 2025 – 2028
+            <br/>• Early-stage doctoral researcher; expected completion 2028
+            </p>
           </div>
         </div>
 
         <div class="edu">
-          <div class="badge">PSU</div>
+          <div class="badge"><img src="assets/PSU.png"></div>
           <div>
             <h3>Master of Geographic Information Systems (MGIS)</h3>
-            <p><strong>The Pennsylvania State University</strong> • 2021 – 2023<br/>Graduate Certificate in Geospatial Analytics<br/>USGIF Graduate Certificate in Geospatial Intelligence</p>
+            <p><strong>The Pennsylvania State University</strong> • 2021 – 2023
+            <br/>• Graduate Certificate in Geospatial Analytics
+            <br/>• USGIF Graduate Certificate in Geospatial Intelligence
+            </p>
           </div>
         </div>
 
         <div class="edu">
-          <div class="badge">PARK</div>
+          <div class="badge"><img src="assets/Park.png"></div>
           <div>
             <h3>BS, Geography</h3>
             <p><strong>Park University</strong> • 2016 – 2018</p>
@@ -430,7 +462,7 @@
         </div>
 
         <div class="edu">
-          <div class="badge"><img src="assets/logos/ccaf.png" alt="Community College of the Air Force logo"></div>
+          <div class="badge"><img src="assets/CCAF.png"></div>
           <div>
             <h3>AAS, Avionic Systems Technology</h3>
             <p><strong>Community College of the Air Force</strong> • 2015 – 2016</p>
@@ -441,35 +473,35 @@
         <div class="skills">
           <div class="skill">
             <div class="label"><span>Geographic Information Systems (ArcGIS, QGIS, OpenStreetMap)</span><span>Advanced</span></div>
-            <div class="bar"><div class="fill" style="width: 90%"></div></div>
-          </div>
-          <div class="skill">
-            <div class="label"><span>Data Analysis &amp; Automation (Python, Pandas, NumPy, SQL)</span><span>Advanced</span></div>
             <div class="bar"><div class="fill" style="width: 85%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>Data Visualization (R, Power BI, Tableau)</span><span>Proficient</span></div>
+            <div class="label"><span>Data Analysis &amp; Automation (Python, Excel, SQL)</span><span>Proficient</span></div>
             <div class="bar"><div class="fill" style="width: 70%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>Version Control &amp; Dev Tools (GitHub, VS Code)</span><span>Proficient</span></div>
-            <div class="bar"><div class="fill" style="width: 72%"></div></div>
+            <div class="label"><span>Data Visualization(R, Power BI, Tableau)</span><span>Capable</span></div>
+            <div class="bar"><div class="fill" style="width: 50%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>Programming &amp; Web Development (JavaScript, HTML, CSS)</span><span>Proficient</span></div>
-            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+            <div class="label"><span>Version Control &amp; Dev Tools (GitHub, VS Code, Spyder)</span><span>Familiar</span></div>
+            <div class="bar"><div class="fill" style="width: 40%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>Productivity (Excel, PowerPoint, Teams/SharePoint)</span><span>Advanced</span></div>
-            <div class="bar"><div class="fill" style="width: 82%"></div></div>
+            <div class="label"><span>Programming &amp; Web Development (JavaScript, HTML, CSS)</span><span>Familiar</span></div>
+            <div class="bar"><div class="fill" style="width: 45%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>AI-Assisted Workflows (ChatGPT, Claude)</span><span>Proficient</span></div>
-            <div class="bar"><div class="fill" style="width: 68%"></div></div>
+            <div class="label"><span>Productivity (Word, PowerPoint, Teams, SharePoint)</span><span>Expert</span></div>
+            <div class="bar"><div class="fill" style="width: 99%"></div></div>
           </div>
           <div class="skill">
-            <div class="label"><span>Design &amp; Media (Adobe Creative Suite, Canva)</span><span>Proficient</span></div>
-            <div class="bar"><div class="fill" style="width: 66%"></div></div>
+            <div class="label"><span>AI-Assisted Workflows (ChatGPT, Claude)</span><span>Advanced</span></div>
+            <div class="bar"><div class="fill" style="width: 90%"></div></div>
+          </div>
+          <div class="skill">
+            <div class="label"><span>Design &amp; Media (Adobe Creative Suite, Canva)</span><span>Advanced</span></div>
+            <div class="bar"><div class="fill" style="width: 95%"></div></div>
           </div>
         </div>
         <p class="note">Tip: adjust the % widths to match how you want to “signal” depth.</p>
@@ -566,15 +598,15 @@
       <section class="card">
         <div class="section-title"><h2>Volunteering</h2></div>
         <article class="entry">
-          <div class="entry-head">
-            <div>
+          <div class="edu">
+           <div class="badge"><img src="assets/HOTOSM.png"></div> <div>
+              <h3>Humanitarian OpenStreetMap Team</h3>
               <p class="role">Mapper &amp; Spatial Analyst</p>
-              <p class="org">Humanitarian OpenStreetMap Team</p>
             </div>
             <div class="meta">2024 – Present</div>
           </div>
           <ul>
-            <li>Replace this line with a one-sentence impact statement (e.g., crisis response mapping, features added, regions supported).</li>
+            <li>Contributed 65+ hours to crisis-response mapping & analysis (earthquake relief and South Sudan mass-casualty support), including the validation of over 1K features and 40 km of waterways mapped to improve humanitarian planning and access.</li>
           </ul>
         </article>
       </section>
@@ -596,7 +628,7 @@
         <div class="section-title"><h2>Training / Courses</h2></div>
         <div class="entry">
           <ul>
-            <li><strong>AMC Staff Orientation Course</strong> — Command relationships, admin tools, and processing for organizations with &gt;1K members.</li>
+            <li><strong>Headquarters Staff Orientation Course</strong> — Command relationships, admin tools, and processing for organizations with &gt;1K members.</li>
             <li><strong>Basic Intelligence Officers Course</strong> — Analytics and communication practices for intelligence, cyber, and space missions.</li>
             <li><strong>FADE Academy</strong> — Intensive NRO program applying methodologies for streamlined access to national, tactical, and open-source data.</li>
             <li><strong>HC-130J Avionics Craftsman Courses</strong> — Advanced maintenance and troubleshooting for C-130J communication, navigation, and Guidance &amp; Control systems.</li>
