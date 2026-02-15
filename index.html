@@ -61,7 +61,7 @@ body::before{
   background-position: center;
 
   opacity: 0.10;                /* faintness control */
-  filter: brightness(0.3) contrast(.) saturate(10); /* darker + subdued */
+  filter: brightness(0.3), saturate(10); /* darker + subdued */
 }
 
 /* ensure your page content stays above the overlay */
@@ -111,7 +111,7 @@ body::before{
       min-width:0;
     }
     .hero-right{
-      flex:0 0 220px;
+      flex:0 0 auto;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -121,15 +121,13 @@ body::before{
       max-width:200px;
       aspect-ratio:3/4;
       border-radius:var(--radius);
-      border:2px dashed var(--line);
-      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);      background:rgba(255,255,255,.03);
       display:flex;
       align-items:center;
       justify-content:center;
       color:var(--muted);
       font-size:var(--small);
       text-align:center;
-      padding:16px;
     }
     .portrait-placeholder img{
       width:100%;
@@ -390,8 +388,7 @@ body::before{
 
         <div class="hero-right">
           <div class="portrait-placeholder">
-            <!-- Replace this div's contents with: <img src="your-portrait.jpg" alt="Jared Alexander Dumale"> -->
-            Portrait
+            <img src="Assets\Portrait.jpeg"></div>
           </div>
         </div>
       </div>
@@ -545,7 +542,6 @@ body::before{
             <div class="bar"><div class="fill" style="width: 95%"></div></div>
           </div>
         </div>
-        <p class="note">Tip: adjust the % widths to match how you want to “signal” depth.</p>
       </aside>
 
       <!-- FULL WIDTH SECTIONS -->
@@ -574,7 +570,8 @@ body::before{
             <div class="meta">2025</div>
           </div>
           <ul>
-            <li><em>Using GeoAI to Enhance Air Operations in the Future Battlespace</em> — Delivered a research seminar to senior academic leadership outlining applied GeoAI concepts, use cases, and implications for future air and space operations.</li>
+            <p class="role"><i>Using GeoAI to Enhance Air Operations in the Future Battlespace</i>
+              <li>Delivered a research seminar to senior academic leadership outlining applied GeoAI concepts, use cases, and implications for future air and space operations.</li>
           </ul>
         </article>
 
