@@ -249,22 +249,88 @@
       font-size: var(--small);
     }
 
-    /* ===== Artifact entries ===== */
-    .artifact{padding: 12px 0; border-bottom:1px solid var(--line)}
-    .artifact:last-child{border-bottom:none; padding-bottom:2px}
-    .artifact-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:baseline;
-      gap:12px;
-      flex-wrap:wrap;
+    /* ===== Section lede ===== */
+    .section-lede{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: var(--small);
+      max-width: 78ch;
     }
+
+    /* ===== Artifact grid ===== */
+    .artifact-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+    .artifact{
+      display: flex;
+      flex-direction: column;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform .15s ease, border-color .15s ease;
+      scroll-margin-top: 80px;
+    }
+    .artifact:hover{
+      transform: translateY(-2px);
+      border-color: rgba(105,167,255,.35);
+    }
+    .artifact:target{
+      border-color: rgba(123,227,199,.55);
+      box-shadow: 0 0 0 3px rgba(123,227,199,.15);
+    }
+    .artifact-thumb{
+      position: relative;
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: #f4f6fa;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .artifact-thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform .3s ease;
+    }
+    .artifact:hover .artifact-thumb img{transform: scale(1.02)}
+    .thumb-badge{
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(11,15,23,.82);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .artifact-body{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px 16px 16px;
+      flex: 1 1 auto;
+    }
+    .artifact-head{display: flex; flex-direction: column; gap: 2px}
     .artifact-title{
       font-weight: 800;
-      letter-spacing:.2px;
-      margin:0;
+      letter-spacing: .2px;
+      margin: 0;
       font-size: 17px;
+      line-height: 1.3;
     }
+    .artifact-title a:hover{color: var(--accent)}
     .artifact-sub{
       margin: 2px 0 0;
       color: var(--muted);
@@ -279,14 +345,12 @@
     .meta{
       color: var(--muted);
       font-size: var(--small);
-      white-space:nowrap;
     }
     .artifact-tags{
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
       align-items: center;
-      margin: 10px 0 4px;
     }
     .artifact-tags-label{
       font-size: 10px;
@@ -314,18 +378,61 @@
     .artifact-blurb{
       color: rgba(231,238,252,.92);
       font-size: var(--body);
-      margin: 12px 0 0;
+      margin: 2px 0 0;
     }
     .artifact-blurb p{margin: 0 0 8px}
     .artifact-blurb p:last-child{margin-bottom: 0}
+
+    /* Collapsible "more" section */
+    details.more{
+      border-top: 1px solid var(--line);
+      padding-top: 8px;
+      margin-top: 2px;
+    }
+    details.more summary{
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent2);
+      font-size: var(--small);
+      font-weight: 700;
+      user-select: none;
+    }
+    details.more summary::-webkit-details-marker{display: none}
+    details.more summary::before{
+      content: "";
+      width: 7px; height: 7px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(-45deg);
+      transition: transform .15s ease;
+      margin-right: 2px;
+    }
+    details.more[open] summary::before{transform: rotate(45deg)}
+    details.more summary:hover{color: var(--text)}
+    .more-body{
+      margin-top: 8px;
+      color: rgba(231,238,252,.88);
+      font-size: var(--small);
+      line-height: 1.5;
+    }
+    .more-body p{margin: 0 0 8px}
+    .more-body p:last-child{margin-bottom: 0}
+    .more-body ul{margin: 6px 0 8px; padding-left: 18px}
+    .more-body li{margin: 2px 0}
 
     .artifact-actions{
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-top: 12px;
+      margin-top: auto;
+      padding-top: 6px;
     }
-    .artifact-actions a{
+    .artifact-actions a,
+    .artifact-actions button{
+      font-family: inherit;
       font-size: var(--small);
       padding: 6px 12px;
       border-radius: 999px;
@@ -335,24 +442,67 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      cursor: pointer;
+      line-height: 1.4;
       transition: color .15s ease, border-color .15s ease;
     }
-    .artifact-actions a:hover{
+    .artifact-actions a:hover,
+    .artifact-actions button:hover{
       color: var(--text);
       border-color: rgba(105,167,255,.35);
     }
-    .artifact-actions a.primary{
+    .artifact-actions .primary{
       font-weight: 700;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       color: var(--bg);
       border-color: transparent;
       transition: opacity .15s ease;
     }
-    .artifact-actions a.primary:hover{opacity: .9; color: var(--bg)}
+    .artifact-actions .primary:hover{opacity: .9; color: var(--bg)}
+    .artifact-actions button[aria-pressed="true"]{
+      color: var(--accent2);
+      border-color: rgba(123,227,199,.45);
+      background: rgba(123,227,199,.08);
+    }
 
-    /* ===== Embedded PDF viewer ===== */
+    /* ===== On-demand PDF viewer ===== */
+    .viewer{scroll-margin-top: 70px}
+    .viewer .section-title{flex-wrap: wrap}
+    .viewer-title{
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .viewer-title h2{
+      text-transform: none;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .viewer-title .meta{font-size: 12px}
+    .viewer-actions{display: flex; gap: 8px; flex-wrap: wrap}
+    .viewer-actions a,
+    .viewer-actions button{
+      font-family: inherit;
+      font-size: var(--small);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      line-height: 1.4;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .viewer-actions a:hover,
+    .viewer-actions button:hover{
+      color: var(--text);
+      border-color: rgba(105,167,255,.35);
+    }
     .pdf-frame{
-      margin-top: 14px;
       border: 1px solid var(--line);
       border-radius: 12px;
       overflow: hidden;
@@ -377,6 +527,10 @@
     @media (max-width: 720px){
       .pdf-frame object,
       .pdf-frame iframe{height: 70vh}
+    }
+    /* Inline preview is a poor experience on small phones; nudge to open in a new tab instead */
+    @media (max-width: 560px){
+      .artifact-grid{grid-template-columns: 1fr}
     }
 
     .note{color:var(--muted); font-size: var(--small); margin: 10px 0 0}
@@ -420,7 +574,9 @@
       .hero,.card{box-shadow:none}
       .hero::after{display:none}
       .chip{background:transparent}
-      .topnav,.topnav-toggle,.artifact-actions,.pdf-frame,.footer-social{display:none !important}
+      .topnav,.topnav-toggle,.artifact-actions,.viewer,.footer-social{display:none !important}
+      .artifact-grid{display:block}
+      .artifact{break-inside:avoid; margin-bottom:16px}
       .tag{border-color:#888; color:#333; background:transparent}
     }
   </style>
@@ -447,11 +603,11 @@
       <div class="hero-inner">
         <p class="eyebrow">Portfolio</p>
         <h1>Artifacts &amp; Work Samples</h1>
-        <p class="tagline">Reports, analyses, and deliverables from coursework, research, and applied projects.</p>
+        <p class="tagline">Reports, research posters, and deliverables from coursework, doctoral research, and applied projects.</p>
         <p class="intro">
           This page collects finished pieces of work that show how I approach a geospatial problem end to end:
           framing the question, building a repeatable workflow, and delivering results a reader can act on.
-          Each artifact is available to read in place or to download.
+          Each artifact can be opened in a new tab, downloaded, or previewed right here on the page.
         </p>
         <div class="contact">
           <a class="chip" href="index.html">
@@ -462,6 +618,14 @@
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12"/><path d="M7 11l5 5 5-5"/></svg>
             Project Summaries
           </a>
+          <a class="chip" href="#geoint-cubed">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M12 12 4 7.5"/><path d="m12 12 8-4.5"/><path d="M12 12v9"/></svg>
+            GEOINT³ Framework
+          </a>
+          <a class="chip" href="#geog-883-lake-mead">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg>
+            Lake Mead Report
+          </a>
         </div>
       </div>
     </header>
@@ -470,68 +634,192 @@
       <section class="card" id="artifacts" aria-labelledby="artifacts-title">
         <div class="section-title">
           <h2 id="artifacts-title">Artifacts</h2>
-          <span class="count">1 item</span>
+          <span class="count">2 items</span>
         </div>
+        <p class="section-lede">
+          Newest first. Use <strong>Preview here</strong> to read a document without leaving the page, or open it in a new tab for the full-size view.
+        </p>
 
-        <article class="artifact" id="geog-883-lake-mead">
-          <div class="artifact-head">
-            <div>
-              <h3 class="artifact-title">Four Decades of Surface-Water Loss at Lake Mead</h3>
-              <p class="artifact-sub">A multi-temporal Landsat classification and change-detection analysis, 1981–2022</p>
-              <p class="org">GEOG 883 · Remote Sensing · The Pennsylvania State University</p>
-            </div>
-            <div class="meta">Final Project · MGIS Program</div>
-          </div>
+        <div class="artifact-grid">
 
-          <div class="artifact-tags">
-            <span class="artifact-tags-label">Type</span>
-            <span class="tag kind-tag">Final Report</span>
-            <span class="tag kind-tag">PDF</span>
-          </div>
-          <div class="artifact-tags">
-            <span class="artifact-tags-label">Skills</span>
-            <span class="tag">Remote Sensing</span>
-            <span class="tag">Landsat</span>
-            <span class="tag">Supervised Classification</span>
-            <span class="tag">Change Detection</span>
-            <span class="tag">Accuracy Assessment</span>
-            <span class="tag">ArcGIS Pro</span>
-          </div>
-
-          <div class="artifact-blurb">
-            <p>
-              This report was my final project for GEOG 883 (Remote Sensing) in the Master of GIS program at Penn State University.
-              It quantifies how much of Lake Mead's surface water has disappeared over four decades, and when, using seven Landsat scenes from 1981 to 2022.
-            </p>
-            <p>
-              Each scene was classified into water and land with a supervised K-nearest-neighbor classifier in ArcGIS Pro, checked with a stratified accuracy assessment, converted to polygons, and measured.
-              The classified surface area fell 47.5% across the study period, and the key finding is the timing: the reservoir was stable through 1999 and has been in continuous decline since.
-            </p>
-          </div>
-
-          <div class="artifact-actions">
-            <a class="primary" href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
-              Open PDF
+          <!-- ===== GEOINT³ research poster ===== -->
+          <article class="artifact" id="geoint-cubed"
+                   data-pdf="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf"
+                   data-title="GEOINT³: A Three-Dimensional Framework for Geospatial Intelligence Capability Development"
+                   data-meta="Research poster · USGIF GEOINT Symposium, Denver, Colorado · 2026">
+            <a class="artifact-thumb" href="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the GEOINT³ research poster (PDF) in a new tab">
+              <img src="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster_preview.png" alt="Preview of the GEOINT³ research poster: a three-by-three-by-three cube diagram with axes for Analytic Complexity, Representational Engagement, and Decision Support Level." loading="lazy" width="1210" height="935" />
+              <span class="thumb-badge">Research Poster · 1 page</span>
             </a>
-            <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" download="Dumale_GEOG_883_Lake_Mead_Final_Report.pdf">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
-              Download
-            </a>
-          </div>
-
-          <div class="pdf-frame">
-            <object data="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" type="application/pdf" aria-label="Embedded PDF: Four Decades of Surface-Water Loss at Lake Mead">
-              <div class="pdf-fallback">
-                Your browser can't display PDFs inline.
-                <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer">Open the report in a new tab</a>
-                or use the Download button above.
+            <div class="artifact-body">
+              <div class="artifact-head">
+                <h3 class="artifact-title">GEOINT³: A Three-Dimensional Framework for Geospatial Intelligence Capability Development</h3>
+                <p class="artifact-sub">Every GEOINT program claims decision advantage. Almost none teach it.</p>
+                <p class="org">Texas State University · United States Air Force Academy</p>
+                <p class="meta">Presented at the USGIF GEOINT Symposium · Denver, Colorado · 2026</p>
               </div>
-            </object>
-          </div>
-          <p class="note">10 pages · Originally submitted for GEOG 883; revised for portfolio presentation with the analysis and figures unchanged.</p>
-        </article>
 
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Type</span>
+                <span class="tag kind-tag">Research Poster</span>
+                <span class="tag kind-tag">Conference</span>
+                <span class="tag kind-tag">PDF</span>
+              </div>
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Skills</span>
+                <span class="tag">GEOINT Education</span>
+                <span class="tag">Curriculum Design</span>
+                <span class="tag">Spatial Thinking</span>
+                <span class="tag">Capability Frameworks</span>
+                <span class="tag">Program Assessment</span>
+                <span class="tag">Workforce Development</span>
+              </div>
+
+              <div class="artifact-blurb">
+                <p>
+                  GEOINT³ is an educational framework I have been developing through my doctoral research at Texas State University,
+                  shaped by my time as Deputy Director of Geospatial Intelligence at the U.S. Air Force Academy.
+                  It gives educators, program managers, and workforce developers a common language for mapping where GEOINT capability is actually built, and where it is not.
+                </p>
+              </div>
+
+              <details class="more">
+                <summary>More about this work</summary>
+                <div class="more-body">
+                  <p>
+                    GEOINT education has no shared language for capability development. Programs define what to teach, not how thinking grows,
+                    and competency models are linear while GEOINT roles are not. The framework extends Jo and Bednarz's spatial thinking taxonomy
+                    from the classroom into a professional capability space with three axes:
+                  </p>
+                  <ul>
+                    <li><strong>Analytic Complexity</strong> — Descriptive → Relational / Patterned → Predictive / Anticipatory</li>
+                    <li><strong>Representational Engagement</strong> (the Practitioner pathway) — Consume → Manipulate → Design</li>
+                    <li><strong>Decision Support Level</strong> (the Consumer pathway) — Data Exploitation → Analytic Judgment → Decision Advantage</li>
+                  </ul>
+                  <p>
+                    Together they form 27 distinct capability contexts. Every GEOINT role occupies a region of the cube; the framework does not prescribe where a program should be, it shows where it is.
+                    It was built from a systematic review of GEOINT education literature and workforce models, refined through expert consultation,
+                    and piloted against the USGIF certificate curriculum at the Air Force Academy.
+                  </p>
+                  <p>
+                    The poster also walks through a four-step program assessment (inventory, map, read the gaps, define your audience) and is candid about limits:
+                    the cube is still conceptual. Next steps are cross-institutional curriculum mapping, a learner self-assessment instrument, and empirical validation.
+                  </p>
+                </div>
+              </details>
+
+              <div class="artifact-actions">
+                <button type="button" class="preview-btn" aria-pressed="false" aria-controls="viewer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Preview here
+                </button>
+                <a class="primary" href="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+                  Open PDF
+                </a>
+                <a href="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf" download="Dumale_GEOINT3_USGIF_Symposium_Poster.pdf">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+                  Download
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== GEOG 883 Lake Mead final report ===== -->
+          <article class="artifact" id="geog-883-lake-mead"
+                   data-pdf="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf"
+                   data-title="Four Decades of Surface-Water Loss at Lake Mead"
+                   data-meta="Final report · GEOG 883 Remote Sensing · Penn State MGIS · 10 pages">
+            <a class="artifact-thumb" href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Lake Mead final report (PDF) in a new tab">
+              <img src="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report_preview.png" alt="Map from the report comparing Lake Mead's classified surface-water extent in 1981 and 2022." loading="lazy" width="875" height="718" />
+              <span class="thumb-badge">Final Report · 10 pages</span>
+            </a>
+            <div class="artifact-body">
+              <div class="artifact-head">
+                <h3 class="artifact-title">Four Decades of Surface-Water Loss at Lake Mead</h3>
+                <p class="artifact-sub">A multi-temporal Landsat classification and change-detection analysis, 1981–2022</p>
+                <p class="org">GEOG 883 · Remote Sensing · The Pennsylvania State University</p>
+                <p class="meta">Final Project · MGIS Program · 2023</p>
+              </div>
+
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Type</span>
+                <span class="tag kind-tag">Final Report</span>
+                <span class="tag kind-tag">Coursework</span>
+                <span class="tag kind-tag">PDF</span>
+              </div>
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Skills</span>
+                <span class="tag">Remote Sensing</span>
+                <span class="tag">Landsat</span>
+                <span class="tag">Supervised Classification</span>
+                <span class="tag">Change Detection</span>
+                <span class="tag">Accuracy Assessment</span>
+                <span class="tag">ArcGIS Pro</span>
+              </div>
+
+              <div class="artifact-blurb">
+                <p>
+                  My final project for GEOG 883 (Remote Sensing) in the Penn State Master of GIS program.
+                  It quantifies how much of Lake Mead's surface water has disappeared over four decades, and when, using seven Landsat scenes from 1981 to 2022.
+                </p>
+              </div>
+
+              <details class="more">
+                <summary>More about this work</summary>
+                <div class="more-body">
+                  <p>
+                    Each scene was classified into water and land with a supervised K-nearest-neighbor classifier in ArcGIS Pro, checked with a stratified accuracy assessment,
+                    converted to polygons, and measured.
+                  </p>
+                  <p>
+                    The classified surface area fell 47.5% across the study period, and the key finding is the timing: the reservoir was stable through 1999 and has been in continuous decline since.
+                  </p>
+                  <p>
+                    Originally submitted for GEOG 883; revised for portfolio presentation with the analysis and figures unchanged.
+                  </p>
+                </div>
+              </details>
+
+              <div class="artifact-actions">
+                <button type="button" class="preview-btn" aria-pressed="false" aria-controls="viewer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Preview here
+                </button>
+                <a class="primary" href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+                  Open PDF
+                </a>
+                <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" download="Dumale_GEOG_883_Lake_Mead_Final_Report.pdf">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+                  Download
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== Shared on-demand PDF viewer (filled by script) ===== -->
+      <section class="card viewer" id="viewer" hidden aria-labelledby="viewer-heading" aria-live="polite">
+        <div class="section-title">
+          <div class="viewer-title">
+            <h2 id="viewer-heading">Preview</h2>
+            <span class="meta" id="viewer-meta"></span>
+          </div>
+          <div class="viewer-actions">
+            <a id="viewer-open" href="#" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+              Open in new tab
+            </a>
+            <button type="button" id="viewer-close">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              Close preview
+            </button>
+          </div>
+        </div>
+        <div class="pdf-frame" id="viewer-frame"></div>
       </section>
     </main>
 
@@ -566,6 +854,81 @@
       }
       var yr = document.getElementById('year');
       if (yr) yr.textContent = new Date().getFullYear();
+
+      /* ---- On-demand PDF viewer ---- */
+      var viewer   = document.getElementById('viewer');
+      var frame    = document.getElementById('viewer-frame');
+      var heading  = document.getElementById('viewer-heading');
+      var metaEl   = document.getElementById('viewer-meta');
+      var openLink = document.getElementById('viewer-open');
+      var closeBtn = document.getElementById('viewer-close');
+      var buttons  = Array.prototype.slice.call(document.querySelectorAll('.preview-btn'));
+      var current  = null;
+
+      function setPressed(btn){
+        buttons.forEach(function(b){
+          var on = (b === btn);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          b.lastChild.textContent = on ? ' Now previewing' : ' Preview here';
+        });
+      }
+
+      function closeViewer(){
+        if (!viewer) return;
+        viewer.hidden = true;
+        frame.innerHTML = '';
+        setPressed(null);
+        var prev = current;
+        current = null;
+        if (prev && prev.btn) prev.btn.focus();
+      }
+
+      function openViewer(article, btn){
+        if (!viewer || !article) return;
+        var pdf   = article.getAttribute('data-pdf');
+        var title = article.getAttribute('data-title') || 'Preview';
+        var meta  = article.getAttribute('data-meta') || '';
+        if (!pdf) return;
+
+        if (current && current.pdf === pdf){
+          // Same document already open: just scroll to it.
+          viewer.scrollIntoView({behavior:'smooth', block:'start'});
+          return;
+        }
+
+        heading.textContent = title;
+        metaEl.textContent = meta;
+        openLink.href = pdf;
+
+        var obj = document.createElement('object');
+        obj.setAttribute('data', pdf + '#view=FitH');
+        obj.setAttribute('type', 'application/pdf');
+        obj.setAttribute('aria-label', 'Embedded PDF: ' + title);
+        var fb = document.createElement('div');
+        fb.className = 'pdf-fallback';
+        fb.innerHTML = 'Your browser can\'t display PDFs inline. ' +
+          '<a href="' + pdf + '" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or use the Download button on the card.';
+        obj.appendChild(fb);
+        frame.innerHTML = '';
+        frame.appendChild(obj);
+
+        viewer.hidden = false;
+        current = {pdf: pdf, btn: btn};
+        setPressed(btn);
+        viewer.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+
+      buttons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var article = btn.closest('.artifact');
+          if (current && current.btn === btn){ closeViewer(); return; }
+          openViewer(article, btn);
+        });
+      });
+      if (closeBtn) closeBtn.addEventListener('click', closeViewer);
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && current) closeViewer();
+      });
     })();
   </script>
 </body>
