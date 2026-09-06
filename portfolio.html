@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio artifacts from Jared Alexander Dumale — reports, analyses, and project deliverables in geospatial intelligence, remote sensing, and GIS." />
+  <title>Jared Alexander Dumale | Portfolio</title>
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#0f1624;
+      --text:#e7eefc;
+      --muted:#a6b3cc;
+      --line:rgba(255,255,255,.10);
+      --accent:#69a7ff;
+      --accent2:#7be3c7;
+      --shadow: 0 18px 45px rgba(0,0,0,.45);
+
+      --radius:18px;
+      --max:1100px;
+      --gap:24px;
+
+      --h1: clamp(28px, 4vw, 40px);
+      --h2: 14px;
+      --body: 15px;
+      --small: 13px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      line-height:1.45;
+      background-image:
+        radial-gradient(1200px 700px at 85% 10%, rgba(105,167,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 10% 20%, rgba(105, 112, 110, 0.12), transparent 55%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-color: #000000;
+      position: relative;
+    }
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image: url("Assets/Background.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.10;
+      filter: brightness(0.3), saturate(10);
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{
+      position: relative;
+      z-index: 1;
+      max-width:var(--max);
+      margin: 36px auto 60px;
+      padding: 10px 20px;
+    }
+
+    /* ===== Sticky top nav ===== */
+    .topnav{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(11, 15, 23, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .topnav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topnav-brand{
+      font-size: var(--small);
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .topnav-links{
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .topnav-links a{
+      font-size: var(--small);
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      border-radius: 999px;
+      color: var(--muted);
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .topnav-links a:hover{
+      color: var(--text);
+      border-color: rgba(105,167,255,.35);
+    }
+    .topnav-links a[aria-current="page"]{
+      color: var(--text);
+      border-color: rgba(123,227,199,.45);
+      background: rgba(123,227,199,.08);
+    }
+    .topnav-toggle{
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: var(--small);
+      font-weight: 700;
+    }
+    @media (max-width: 720px){
+      .topnav-links{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+        margin-top: 4px;
+      }
+      .topnav-links.open{display: flex}
+      .topnav-toggle{display: inline-block}
+    }
+
+    /* ===== Page header ===== */
+    .hero{
+      background: linear-gradient(180deg, rgba(234, 221, 221, 0.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(600px 200px at 60% 0%, rgba(105,167,255,.22), transparent 60%),
+        radial-gradient(520px 220px at 10% 0%, rgba(123,227,199,.16), transparent 60%);
+      pointer-events:none;
+      opacity:.75;
+    }
+    .hero-inner{
+      position:relative;
+      padding: 18px 18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .eyebrow{
+      margin:0;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      font-weight: 700;
+    }
+    .hero h1{
+      font-size: var(--h1);
+      margin:0;
+      letter-spacing:.3px;
+    }
+    .tagline{
+      margin:0;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .intro{
+      margin: 4px 0 0;
+      color: rgba(231,238,252,.92);
+      font-size: var(--body);
+      max-width: 72ch;
+    }
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 16px;
+      color:var(--muted);
+      font-size: var(--small);
+      align-items:center;
+      margin-top: 4px;
+    }
+    .chip{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      padding:7px 10px;
+      border-radius: 999px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      transition: transform .15s ease;
+    }
+    .chip:hover{transform: translateY(-1px); border-color: rgba(105,167,255,.35)}
+    .icon{
+      width:16px; height:16px; display:inline-block;
+      opacity:.9;
+      flex: 0 0 auto;
+    }
+
+    /* ===== Cards ===== */
+    .card{
+      background: linear-gradient(180deg, rgba(234, 221, 221, 0.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      padding: 18px 18px 16px;
+      margin-top: var(--gap);
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 12px;
+      padding-bottom:10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-title h2{
+      margin:0;
+      font-size: var(--h2);
+      letter-spacing: .18em;
+      text-transform:uppercase;
+      color: rgba(231,238,252,.92);
+    }
+    .section-title .count{
+      color: var(--muted);
+      font-size: var(--small);
+    }
+
+    /* ===== Artifact entries ===== */
+    .artifact{padding: 12px 0; border-bottom:1px solid var(--line)}
+    .artifact:last-child{border-bottom:none; padding-bottom:2px}
+    .artifact-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .artifact-title{
+      font-weight: 800;
+      letter-spacing:.2px;
+      margin:0;
+      font-size: 17px;
+    }
+    .artifact-sub{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: var(--small);
+    }
+    .org{
+      margin: 2px 0 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: var(--small);
+    }
+    .meta{
+      color: var(--muted);
+      font-size: var(--small);
+      white-space:nowrap;
+    }
+    .artifact-tags{
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 10px 0 4px;
+    }
+    .artifact-tags-label{
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+    .tag{
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+    .tag.kind-tag{
+      border-color: rgba(123,227,199,.3);
+      background: rgba(123,227,199,.08);
+      color: var(--accent2);
+    }
+    .artifact-blurb{
+      color: rgba(231,238,252,.92);
+      font-size: var(--body);
+      margin: 12px 0 0;
+    }
+    .artifact-blurb p{margin: 0 0 8px}
+    .artifact-blurb p:last-child{margin-bottom: 0}
+
+    .artifact-actions{
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .artifact-actions a{
+      font-size: var(--small);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .artifact-actions a:hover{
+      color: var(--text);
+      border-color: rgba(105,167,255,.35);
+    }
+    .artifact-actions a.primary{
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: var(--bg);
+      border-color: transparent;
+      transition: opacity .15s ease;
+    }
+    .artifact-actions a.primary:hover{opacity: .9; color: var(--bg)}
+
+    /* ===== Embedded PDF viewer ===== */
+    .pdf-frame{
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(0,0,0,.25);
+    }
+    .pdf-frame object,
+    .pdf-frame iframe{
+      display: block;
+      width: 100%;
+      height: min(78vh, 900px);
+      border: 0;
+      background: #fff;
+    }
+    .pdf-fallback{
+      padding: 26px 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: var(--small);
+      background: rgba(0,0,0,.25);
+    }
+    .pdf-fallback a{color: var(--accent); font-weight: 700}
+    @media (max-width: 720px){
+      .pdf-frame object,
+      .pdf-frame iframe{height: 70vh}
+    }
+
+    .note{color:var(--muted); font-size: var(--small); margin: 10px 0 0}
+
+    /* ===== Footer ===== */
+    .footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: var(--small);
+      text-align:center;
+      opacity:.9;
+    }
+    .footer-social{
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .footer-social a{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      color: var(--muted);
+      font-size: var(--small);
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .footer-social a:hover{
+      color: var(--text);
+      border-color: rgba(105,167,255,.35);
+    }
+
+    /* Print */
+    @media print{
+      body{background:#fff; color:#111}
+      body::before{display:none}
+      .hero,.card{box-shadow:none}
+      .hero::after{display:none}
+      .chip{background:transparent}
+      .topnav,.topnav-toggle,.artifact-actions,.pdf-frame,.footer-social{display:none !important}
+      .tag{border-color:#888; color:#333; background:transparent}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="topnav" aria-label="Primary">
+    <div class="topnav-inner">
+      <a class="topnav-brand" href="index.html">JAD</a>
+      <button class="topnav-toggle" aria-expanded="false" aria-controls="topnav-links">Menu</button>
+      <div class="topnav-links" id="topnav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="index.html#resumes">Resumes</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Artifacts &amp; Work Samples</h1>
+        <p class="tagline">Reports, analyses, and deliverables from coursework, research, and applied projects.</p>
+        <p class="intro">
+          This page collects finished pieces of work that show how I approach a geospatial problem end to end:
+          framing the question, building a repeatable workflow, and delivering results a reader can act on.
+          Each artifact is available to read in place or to download.
+        </p>
+        <div class="contact">
+          <a class="chip" href="index.html">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Back to Resume
+          </a>
+          <a class="chip" href="index.html#projects">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12"/><path d="M7 11l5 5 5-5"/></svg>
+            Project Summaries
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" id="artifacts" aria-labelledby="artifacts-title">
+        <div class="section-title">
+          <h2 id="artifacts-title">Artifacts</h2>
+          <span class="count">1 item</span>
+        </div>
+
+        <article class="artifact" id="geog-883-lake-mead">
+          <div class="artifact-head">
+            <div>
+              <h3 class="artifact-title">Four Decades of Surface-Water Loss at Lake Mead</h3>
+              <p class="artifact-sub">A multi-temporal Landsat classification and change-detection analysis, 1981–2022</p>
+              <p class="org">GEOG 883 · Remote Sensing · The Pennsylvania State University</p>
+            </div>
+            <div class="meta">Final Project · MGIS Program</div>
+          </div>
+
+          <div class="artifact-tags">
+            <span class="artifact-tags-label">Type</span>
+            <span class="tag kind-tag">Final Report</span>
+            <span class="tag kind-tag">PDF</span>
+          </div>
+          <div class="artifact-tags">
+            <span class="artifact-tags-label">Skills</span>
+            <span class="tag">Remote Sensing</span>
+            <span class="tag">Landsat</span>
+            <span class="tag">Supervised Classification</span>
+            <span class="tag">Change Detection</span>
+            <span class="tag">Accuracy Assessment</span>
+            <span class="tag">ArcGIS Pro</span>
+          </div>
+
+          <div class="artifact-blurb">
+            <p>
+              This report was my final project for GEOG 883 (Remote Sensing) in the Master of GIS program at Penn State University.
+              It quantifies how much of Lake Mead's surface water has disappeared over four decades, and when, using seven Landsat scenes from 1981 to 2022.
+            </p>
+            <p>
+              Each scene was classified into water and land with a supervised K-nearest-neighbor classifier in ArcGIS Pro, checked with a stratified accuracy assessment, converted to polygons, and measured.
+              The classified surface area fell 47.5% across the study period, and the key finding is the timing: the reservoir was stable through 1999 and has been in continuous decline since.
+            </p>
+          </div>
+
+          <div class="artifact-actions">
+            <a class="primary" href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+              Open PDF
+            </a>
+            <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" download="Dumale_GEOG_883_Lake_Mead_Final_Report.pdf">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+              Download
+            </a>
+          </div>
+
+          <div class="pdf-frame">
+            <object data="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" type="application/pdf" aria-label="Embedded PDF: Four Decades of Surface-Water Loss at Lake Mead">
+              <div class="pdf-fallback">
+                Your browser can't display PDFs inline.
+                <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener noreferrer">Open the report in a new tab</a>
+                or use the Download button above.
+              </div>
+            </object>
+          </div>
+          <p class="note">10 pages · Originally submitted for GEOG 883; revised for portfolio presentation with the analysis and figures unchanged.</p>
+        </article>
+
+      </section>
+    </main>
+
+    <div class="footer">
+      © <span id="year"></span> Jared Alexander Dumale • Built with HTML/CSS
+      <div class="footer-social" aria-label="Contact and site links">
+        <a href="index.html">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>
+          Home
+        </a>
+        <a href="mailto:dumalej@gmail.com">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7.5 12 13l7.5-5.5"/><path d="M5.5 18.5h13c.6 0 1-.4 1-1v-10c0-.6-.4-1-1-1h-13c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1Z"/></svg>
+          Email
+        </a>
+        <a href="Assets/Official Bio.pdf" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+          Official Bio
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var navToggle = document.querySelector('.topnav-toggle');
+      var navLinks = document.querySelector('.topnav-links');
+      if (navToggle && navLinks){
+        navToggle.addEventListener('click', function(){
+          var open = navLinks.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      var yr = document.getElementById('year');
+      if (yr) yr.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
