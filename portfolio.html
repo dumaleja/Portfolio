@@ -592,7 +592,6 @@
         <a href="index.html#experience">Experience</a>
         <a href="index.html#projects">Projects</a>
         <a href="portfolio.html" aria-current="page">Portfolio</a>
-        <a href="index.html#resumes">Resumes</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </div>
@@ -626,6 +625,10 @@
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M3 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg>
             Lake Mead Report
           </a>
+          <a class="chip" href="#geo-586-denver-esda">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/></svg>
+            Denver Spatial Analysis
+          </a>
         </div>
       </div>
     </header>
@@ -634,7 +637,7 @@
       <section class="card" id="artifacts" aria-labelledby="artifacts-title">
         <div class="section-title">
           <h2 id="artifacts-title">Artifacts</h2>
-          <span class="count">2 items</span>
+          <span class="count">3 items</span>
         </div>
         <p class="section-lede">
           Newest first. Use <strong>Preview here</strong> to read a document without leaving the page, or open it in a new tab for the full-size view.
@@ -791,6 +794,92 @@
                   Open PDF
                 </a>
                 <a href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" download="Dumale_GEOG_883_Lake_Mead_Final_Report.pdf">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+                  Download
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== GEO 586 Denver poverty / opioid mortality ESDA ===== -->
+          <article class="artifact" id="geo-586-denver-esda"
+                   data-pdf="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf"
+                   data-title="Poverty and Opioid Mortality in Metropolitan Denver"
+                   data-meta="Final project · GEO 586 Spatial Analytics · Penn State MGIS · 10 pages">
+            <a class="artifact-thumb" href="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the Denver poverty and opioid mortality final project (PDF) in a new tab">
+              <img src="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA_preview.png" alt="Choropleth map from the report: a composite index of poverty and opioid mortality classes across the 620 census tracts of the Denver metro area, with the highest values concentrated in central Denver." loading="lazy" width="1024" height="635" />
+              <span class="thumb-badge">Final Project · 10 pages</span>
+            </a>
+            <div class="artifact-body">
+              <div class="artifact-head">
+                <h3 class="artifact-title">Poverty and Opioid Mortality in Metropolitan Denver</h3>
+                <p class="artifact-sub">An exploratory spatial data analysis of 620 census tracts, 2015–2019</p>
+                <p class="org">GEO 586 · Spatial Analytics · The Pennsylvania State University</p>
+                <p class="meta">Final Project · MGIS Program</p>
+              </div>
+
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Type</span>
+                <span class="tag kind-tag">Final Project</span>
+                <span class="tag kind-tag">Coursework</span>
+                <span class="tag kind-tag">PDF</span>
+              </div>
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Skills</span>
+                <span class="tag">Spatial Statistics</span>
+                <span class="tag">Moran's I</span>
+                <span class="tag">LISA</span>
+                <span class="tag">GeoDa</span>
+                <span class="tag">ArcGIS Pro</span>
+                <span class="tag">Map Algebra</span>
+                <span class="tag">Public Health</span>
+              </div>
+
+              <div class="artifact-blurb">
+                <p>
+                  My final project for GEO 586 (Spatial Analytics) in the Penn State Master of GIS program.
+                  It tests a common intuition, that opioid overdose tracks neighborhood poverty, against tract-level public health data
+                  for the ten-county Denver–Aurora–Lakewood metro area, and finds the two patterns are much less alike than expected.
+                </p>
+              </div>
+
+              <details class="more">
+                <summary>More about this work</summary>
+                <div class="more-body">
+                  <p>
+                    Two variables from Colorado Department of Public Health &amp; Environment open data were analyzed independently across all 620 census tracts:
+                    age-adjusted opioid and heroin mortality per 100,000 and the share of residents below the federal poverty line, both for 2015–2019.
+                    In GeoDa I built a queen-contiguity spatial weights matrix, ran global Moran's I with 999 permutations for each variable,
+                    and used Local Indicators of Spatial Association (LISA) to locate the hot spots, cold spots, and outliers driving each result.
+                  </p>
+                  <p>
+                    Poverty proved roughly twice as spatially structured as overdose mortality (Moran's I of 0.445 versus 0.184).
+                    Poverty forms a coherent high-poverty core through central Denver and a broad low-poverty suburban ring, with 255 of 620 tracts in a significant local cluster.
+                    Mortality is far more diffuse: only 121 tracts are significant, and nearly four fifths of the metro reaches no significance threshold at all.
+                    To show where the two burdens coincide, each layer was reclassified to a one-to-five scale and summed with map algebra in ArcGIS Pro,
+                    producing a composite index that peaks tightly in central Denver.
+                  </p>
+                  <p>
+                    The report is explicit about what it does not establish. Univariate Moran's I and LISA describe each variable on its own terms and do not test the poverty–mortality relationship,
+                    and tract-level co-occurrence cannot support claims about individuals. It closes with the appropriate next step, bivariate Moran's I and LISA on the same weights matrix,
+                    plus Empirical Bayes smoothing to tame unstable small-population rates and a re-run restricted to the urbanized core.
+                  </p>
+                  <p>
+                    Originally submitted for GEO 586; revised for portfolio presentation with framing, statistics reporting, and cartography corrected and the underlying analysis unchanged.
+                  </p>
+                </div>
+              </details>
+
+              <div class="artifact-actions">
+                <button type="button" class="preview-btn" aria-pressed="false" aria-controls="viewer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Preview here
+                </button>
+                <a class="primary" href="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+                  Open PDF
+                </a>
+                <a href="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" download="Dumale_GEO_586_Denver_Poverty_Opioid_Mortality.pdf">
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
                   Download
                 </a>
