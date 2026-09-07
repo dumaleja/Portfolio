@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio artifacts from Jared Alexander Dumale — reports, analyses, and project deliverables in geospatial intelligence, remote sensing, and GIS." />
+  <meta name="description" content="Portfolio of Jared Alexander Dumale — a live educational web application, reports, research posters, and project deliverables in geospatial intelligence, remote sensing, GIS, and geography education." />
   <title>Jared Alexander Dumale | Portfolio</title>
 
   <style>
@@ -600,13 +600,13 @@
   <div class="wrap">
     <header class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">Portfolio</p>
-        <h1>Artifacts &amp; Work Samples</h1>
-        <p class="tagline">Reports, research posters, and deliverables from coursework, doctoral research, and applied projects.</p>
+        <p class="eyebrow">Selected Work</p>
+        <h1>Portfolio</h1>
+        <p class="tagline">A live educational web application, research posters, and reports from applied projects, doctoral research, and graduate coursework.</p>
         <p class="intro">
           This page collects finished pieces of work that show how I approach a geospatial problem end to end:
           framing the question, building a repeatable workflow, and delivering results a reader can act on.
-          Each artifact can be opened in a new tab, downloaded, or previewed right here on the page.
+          Each piece can be opened in a new tab, downloaded, or previewed right here on the page.
         </p>
         <div class="contact">
           <a class="chip" href="index.html">
@@ -616,6 +616,10 @@
           <a class="chip" href="index.html#projects">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v12"/><path d="M7 11l5 5 5-5"/></svg>
             Project Summaries
+          </a>
+          <a class="chip" href="#geo412-country-trivia">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg>
+            Geo 412 Game
           </a>
           <a class="chip" href="#geoint-cubed">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M12 12 4 7.5"/><path d="m12 12 8-4.5"/><path d="M12 12v9"/></svg>
@@ -636,14 +640,93 @@
     <main>
       <section class="card" id="artifacts" aria-labelledby="artifacts-title">
         <div class="section-title">
-          <h2 id="artifacts-title">Artifacts</h2>
-          <span class="count">3 items</span>
+          <h2 id="artifacts-title">Featured Work</h2>
+          <span class="count">4 items</span>
         </div>
         <p class="section-lede">
-          Newest first. Use <strong>Preview here</strong> to read a document without leaving the page, or open it in a new tab for the full-size view.
+          Newest first. Use <strong>Preview here</strong> to try the game or read a document without leaving the page, or open it in a new tab for the full-size view.
         </p>
 
         <div class="artifact-grid">
+
+          <!-- ===== Geo 412 country trivia game (live web application) ===== -->
+          <article class="artifact" id="geo412-country-trivia"
+                   data-url="https://www.geo412.com"
+                   data-title="Geo 412: World Geography Trivia"
+                   data-meta="Live web application · geo412.com · Built with Claude Code · Hosted on Microsoft Azure">
+            <a class="artifact-thumb" href="https://www.geo412.com" target="_blank" rel="noopener noreferrer" aria-label="Open the Geo 412 geography trivia game in a new tab">
+              <img src="Assets/Artifacts/Geo412_Country_Trivia_preview.png" alt="Screenshot of the Geo 412 game: a world map with country outlines, a prompt asking the player to find Gabon, and a running score." loading="lazy" width="1600" height="920" />
+              <span class="thumb-badge">Live Web App · geo412.com</span>
+            </a>
+            <div class="artifact-body">
+              <div class="artifact-head">
+                <h3 class="artifact-title">Geo 412: World Geography Trivia</h3>
+                <p class="artifact-sub">A type-in trivia game that helps cadets commit the countries of the world, and their geographic combatant commands, to memory</p>
+                <p class="org">Built for United States Air Force Academy cadets · Texas State University</p>
+                <p class="meta">Live web application · 2025 – Present</p>
+              </div>
+
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Type</span>
+                <span class="tag kind-tag">Web Application</span>
+                <span class="tag kind-tag">Live Site</span>
+                <span class="tag kind-tag">Game-Based Learning</span>
+              </div>
+              <div class="artifact-tags">
+                <span class="artifact-tags-label">Skills</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">Website Design</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">AI-Assisted Coding (Claude Code)</span>
+                <span class="tag">Microsoft Azure</span>
+                <span class="tag">Curriculum Design</span>
+              </div>
+
+              <div class="artifact-blurb">
+                <p>
+                  Geo 412 is a browser game I built with Claude Code to help my undergraduate students learn the countries of the world.
+                  Named for the geography course it supports at the U.S. Air Force Academy, it is especially effective for future military officers:
+                  the type-in trivia format drills which country falls under which geographic combatant command until the map sticks.
+                </p>
+              </div>
+
+              <details class="more">
+                <summary>More about this work</summary>
+                <div class="more-body">
+                  <p>
+                    Flashcards and slides do not make world geography stick, and the test format rewards short-term memorization over real geographic intuition.
+                    Geo 412 turns the problem into a game. Players are prompted with a country and must type the answer or find it on the world map,
+                    get instant feedback, and work through all of the countries in short, self-paced sessions.
+                    Because the answers are organized by geographic combatant command, cadets learn the operational geography they will actually be tested on and use as officers.
+                  </p>
+                  <p>
+                    The game is a hand-built front end in JavaScript, HTML, and CSS with an interactive SVG world map, developed with AI-assisted coding in Claude Code,
+                    version-controlled on GitHub, and deployed to Microsoft Azure at its own domain. It is live and in use in the classroom,
+                    and it also supports my doctoral research into how AI can help educators design learning aids and effective teaching tools.
+                  </p>
+                  <p>
+                    The first version of the game, a click-the-country map quiz, is open source on GitHub under the MIT License.
+                  </p>
+                </div>
+              </details>
+
+              <div class="artifact-actions">
+                <button type="button" class="preview-btn" aria-pressed="false" aria-controls="viewer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Preview here
+                </button>
+                <a class="primary" href="https://www.geo412.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+                  Play the Game
+                </a>
+                <a href="https://github.com/dumaleja/Geo-Trivia" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/><path d="m14 4-4 16"/></svg>
+                  Source on GitHub
+                </a>
+              </div>
+            </div>
+          </article>
 
           <!-- ===== GEOINT³ research poster ===== -->
           <article class="artifact" id="geoint-cubed"
@@ -975,11 +1058,13 @@
       function openViewer(article, btn){
         if (!viewer || !article) return;
         var pdf   = article.getAttribute('data-pdf');
+        var url   = article.getAttribute('data-url');
+        var src   = pdf || url;
         var title = article.getAttribute('data-title') || 'Preview';
         var meta  = article.getAttribute('data-meta') || '';
-        if (!pdf) return;
+        if (!src) return;
 
-        if (current && current.pdf === pdf){
+        if (current && current.src === src){
           // Same document already open: just scroll to it.
           viewer.scrollIntoView({behavior:'smooth', block:'start'});
           return;
@@ -987,22 +1072,38 @@
 
         heading.textContent = title;
         metaEl.textContent = meta;
-        openLink.href = pdf;
-
-        var obj = document.createElement('object');
-        obj.setAttribute('data', pdf + '#view=FitH');
-        obj.setAttribute('type', 'application/pdf');
-        obj.setAttribute('aria-label', 'Embedded PDF: ' + title);
-        var fb = document.createElement('div');
-        fb.className = 'pdf-fallback';
-        fb.innerHTML = 'Your browser can\'t display PDFs inline. ' +
-          '<a href="' + pdf + '" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or use the Download button on the card.';
-        obj.appendChild(fb);
+        openLink.href = src;
         frame.innerHTML = '';
-        frame.appendChild(obj);
+
+        if (pdf){
+          var obj = document.createElement('object');
+          obj.setAttribute('data', pdf + '#view=FitH');
+          obj.setAttribute('type', 'application/pdf');
+          obj.setAttribute('aria-label', 'Embedded PDF: ' + title);
+          var fb = document.createElement('div');
+          fb.className = 'pdf-fallback';
+          fb.innerHTML = 'Your browser can\'t display PDFs inline. ' +
+            '<a href="' + pdf + '" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or use the Download button on the card.';
+          obj.appendChild(fb);
+          frame.appendChild(obj);
+        } else {
+          // Live website: embed it in an iframe so the reader can try it in place.
+          var ifr = document.createElement('iframe');
+          ifr.setAttribute('src', url);
+          ifr.setAttribute('title', title);
+          ifr.setAttribute('loading', 'lazy');
+          ifr.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+          ifr.setAttribute('allow', 'fullscreen');
+          frame.appendChild(ifr);
+          var note = document.createElement('div');
+          note.className = 'pdf-fallback';
+          note.innerHTML = 'Embedded from <a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url.replace(/^https?:\/\//, '') + '</a>. ' +
+            'If the game does not appear here, open it in a new tab.';
+          frame.appendChild(note);
+        }
 
         viewer.hidden = false;
-        current = {pdf: pdf, btn: btn};
+        current = {src: src, btn: btn};
         setPressed(btn);
         viewer.scrollIntoView({behavior:'smooth', block:'start'});
       }
