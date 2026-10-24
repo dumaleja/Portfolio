@@ -8,13 +8,13 @@
 
   <style>
     :root{
-      --bg:#0b0f17;
-      --card:#0f1624;
-      --text:#e7eefc;
-      --muted:#a6b3cc;
+      --bg:#0a131c;
+      --card:#0d1822;
+      --text:#e8f0f0;
+      --muted:#9aa8b5;
       --line:rgba(255,255,255,.10);
-      --accent:#69a7ff;
-      --accent2:#7be3c7;
+      --accent:#f2a541;
+      --accent2:#4fb8aa;
       --shadow: 0 18px 45px rgba(0,0,0,.45);
 
       --radius:18px;
@@ -35,13 +35,13 @@
       color: var(--text);
       line-height:1.45;
       background-image:
-        radial-gradient(1200px 700px at 85% 10%, rgba(105,167,255,.18), transparent 55%),
-        radial-gradient(900px 600px at 10% 20%, rgba(105, 112, 110, 0.12), transparent 55%);
+        radial-gradient(1200px 700px at 85% 10%, rgba(242,165,65,.18), transparent 55%),
+        radial-gradient(900px 600px at 10% 20%, rgba(79, 184, 170, 0.10), transparent 55%);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      background-color: #000000;
+      background-color: #0a131c;
       position: relative;
     }
     body::before{
@@ -75,7 +75,7 @@
       z-index: 20;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      background: rgba(11, 15, 23, 0.78);
+      background: rgba(10, 19, 28, 0.82);
       border-bottom: 1px solid var(--line);
     }
     .topnav-inner{
@@ -111,36 +111,12 @@
     }
     .topnav-links a:hover{
       color: var(--text);
-      border-color: rgba(105,167,255,.35);
+      border-color: rgba(242,165,65,.35);
     }
     .topnav-links a[aria-current="page"]{
       color: var(--text);
-      border-color: rgba(123,227,199,.45);
-      background: rgba(123,227,199,.08);
-    }
-    .topnav-toggle{
-      display: none;
-      background: transparent;
-      border: 1px solid var(--line);
-      color: var(--text);
-      padding: 6px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: var(--small);
-      font-weight: 700;
-    }
-    @media (max-width: 720px){
-      .topnav-links{
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 6px;
-        padding-top: 8px;
-        border-top: 1px solid var(--line);
-        margin-top: 4px;
-      }
-      .topnav-links.open{display: flex}
-      .topnav-toggle{display: inline-block}
+      border-color: rgba(79,184,170,.45);
+      background: rgba(79,184,170,.08);
     }
 
     /* ===== Page header ===== */
@@ -156,8 +132,8 @@
       content:"";
       position:absolute; inset:-2px;
       background:
-        radial-gradient(600px 200px at 60% 0%, rgba(105,167,255,.22), transparent 60%),
-        radial-gradient(520px 220px at 10% 0%, rgba(123,227,199,.16), transparent 60%);
+        radial-gradient(600px 200px at 60% 0%, rgba(242,165,65,.22), transparent 60%),
+        radial-gradient(520px 220px at 10% 0%, rgba(79,184,170,.16), transparent 60%);
       pointer-events:none;
       opacity:.75;
     }
@@ -188,7 +164,7 @@
     }
     .intro{
       margin: 4px 0 0;
-      color: rgba(231,238,252,.92);
+      color: rgba(232,240,240,.92);
       font-size: var(--body);
       max-width: 72ch;
     }
@@ -211,7 +187,7 @@
       align-items:center;
       transition: transform .15s ease;
     }
-    .chip:hover{transform: translateY(-1px); border-color: rgba(105,167,255,.35)}
+    .chip:hover{transform: translateY(-1px); border-color: rgba(242,165,65,.35)}
     .icon{
       width:16px; height:16px; display:inline-block;
       opacity:.9;
@@ -242,7 +218,7 @@
       font-size: var(--h2);
       letter-spacing: .18em;
       text-transform:uppercase;
-      color: rgba(231,238,252,.92);
+      color: rgba(232,240,240,.92);
     }
     .section-title .count{
       color: var(--muted);
@@ -276,11 +252,11 @@
     }
     .artifact:hover{
       transform: translateY(-2px);
-      border-color: rgba(105,167,255,.35);
+      border-color: rgba(242,165,65,.35);
     }
     .artifact:target{
-      border-color: rgba(123,227,199,.55);
-      box-shadow: 0 0 0 3px rgba(123,227,199,.15);
+      border-color: rgba(79,184,170,.55);
+      box-shadow: 0 0 0 3px rgba(79,184,170,.15);
     }
     .artifact-thumb{
       position: relative;
@@ -371,12 +347,12 @@
       color: var(--muted);
     }
     .tag.kind-tag{
-      border-color: rgba(123,227,199,.3);
-      background: rgba(123,227,199,.08);
+      border-color: rgba(79,184,170,.3);
+      background: rgba(79,184,170,.08);
       color: var(--accent2);
     }
     .artifact-blurb{
-      color: rgba(231,238,252,.92);
+      color: rgba(232,240,240,.92);
       font-size: var(--body);
       margin: 2px 0 0;
     }
@@ -414,7 +390,7 @@
     details.more summary:hover{color: var(--text)}
     .more-body{
       margin-top: 8px;
-      color: rgba(231,238,252,.88);
+      color: rgba(232,240,240,.88);
       font-size: var(--small);
       line-height: 1.5;
     }
@@ -449,7 +425,7 @@
     .artifact-actions a:hover,
     .artifact-actions button:hover{
       color: var(--text);
-      border-color: rgba(105,167,255,.35);
+      border-color: rgba(242,165,65,.35);
     }
     .artifact-actions .primary{
       font-weight: 700;
@@ -461,8 +437,8 @@
     .artifact-actions .primary:hover{opacity: .9; color: var(--bg)}
     .artifact-actions button[aria-pressed="true"]{
       color: var(--accent2);
-      border-color: rgba(123,227,199,.45);
-      background: rgba(123,227,199,.08);
+      border-color: rgba(79,184,170,.45);
+      background: rgba(79,184,170,.08);
     }
 
     /* ===== On-demand PDF viewer ===== */
@@ -500,7 +476,7 @@
     .viewer-actions a:hover,
     .viewer-actions button:hover{
       color: var(--text);
-      border-color: rgba(105,167,255,.35);
+      border-color: rgba(242,165,65,.35);
     }
     .pdf-frame{
       border: 1px solid var(--line);
@@ -564,7 +540,7 @@
     }
     .footer-social a:hover{
       color: var(--text);
-      border-color: rgba(105,167,255,.35);
+      border-color: rgba(242,165,65,.35);
     }
 
     /* Print */
@@ -574,25 +550,23 @@
       .hero,.card{box-shadow:none}
       .hero::after{display:none}
       .chip{background:transparent}
-      .topnav,.topnav-toggle,.artifact-actions,.viewer,.footer-social{display:none !important}
+      .topnav,.artifact-actions,.viewer,.footer-social{display:none !important}
       .artifact-grid{display:block}
       .artifact{break-inside:avoid; margin-bottom:16px}
       .tag{border-color:#888; color:#333; background:transparent}
     }
   </style>
+  <link rel="stylesheet" href="Assets/theme.css" />
 </head>
 
 <body>
   <nav class="topnav" aria-label="Primary">
     <div class="topnav-inner">
-      <a class="topnav-brand" href="index.html">JAD</a>
-      <button class="topnav-toggle" aria-expanded="false" aria-controls="topnav-links">Menu</button>
+      <a class="topnav-brand" href="index.html">DUMALE.ME</a>
       <div class="topnav-links" id="topnav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#projects">Projects</a>
+        <a href="index.html">Resume</a>
         <a href="portfolio.html" aria-current="page">Portfolio</a>
-        <a href="index.html#contact">Contact</a>
+        <a class="topnav-cta" href="mailto:dumalej@gmail.com">Contact</a>
       </div>
     </div>
   </nav>
@@ -1016,14 +990,6 @@
 
   <script>
     (function(){
-      var navToggle = document.querySelector('.topnav-toggle');
-      var navLinks = document.querySelector('.topnav-links');
-      if (navToggle && navLinks){
-        navToggle.addEventListener('click', function(){
-          var open = navLinks.classList.toggle('open');
-          navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
       var yr = document.getElementById('year');
       if (yr) yr.textContent = new Date().getFullYear();
 
