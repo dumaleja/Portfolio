@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Opioid mortality and poverty in metro Denver | Jared Dumale</title>
+  <meta name="description" content="Case study: a spatial analysis of poverty and opioid mortality across metropolitan Denver census tracts.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <a class="back" href="../portfolio.html" data-back>Back</a>
+        <a class="brand" href="../index.html" aria-label="Jared Dumale, home">Jared <span class="hl">Dumale</span></a>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="topnav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../portfolio.html" aria-current="true">Portfolio</a></li>
+          <li><a href="../recognition.html">Recognition</a></li>
+          <li><a href="../Assets/Dumale_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../portfolio.html">Portfolio</a><span aria-hidden="true">/</span>Opioid mortality and poverty in metro Denver</nav>
+      <article class="case card">
+        <aside class="case-side">
+          <img src="../Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA_preview.png" width="1024" height="635" alt="Map of the Denver metro area shaded from yellow to dark red by a composite index, with the highest values near the city center.">
+          <div class="btn-row">
+          <a class="btn btn-primary" href="../Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" target="_blank" rel="noopener noreferrer">Open the report (PDF)</a>
+          <a class="btn" href="../Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" target="_blank" rel="noopener noreferrer" download="Dumale_Denver_Opioid_Poverty_ESDA.pdf">Download</a>
+          </div>
+        </aside>
+        <div class="case-main">
+          <h1 class="case-title">Opioid mortality and poverty in metro Denver</h1>
+          <p class="case-sub">An exploratory spatial data analysis of 620 census tracts, 2015 to 2019</p>
+          <p class="meta">GEO 586, Spatial Analytics, The Pennsylvania State University. Final project, MGIS program.</p>
+          <ul class="tags" role="list" aria-label="Tools and skills">
+          <li class="tag">Spatial Statistics</li>
+          <li class="tag">Moran's I</li>
+          <li class="tag">LISA</li>
+          <li class="tag">GeoDa</li>
+          <li class="tag">ArcGIS Pro</li>
+          <li class="tag">Map Algebra</li>
+          <li class="tag">Public Health</li>
+          </ul>
+          <div class="case-body">
+          <h2>The question</h2>
+          <p>My final project for GEO 586 (Spatial Analytics) in the Penn State Master of GIS program. It tests a common intuition, that opioid overdose tracks neighborhood poverty, against tract-level public health data for the ten-county Denver-Aurora-Lakewood metro area. It finds the two patterns are much less alike than expected.</p>
+          <h2>What I did</h2>
+          <p>Two variables from Colorado Department of Public Health and Environment open data were analyzed independently across all 620 census tracts: age-adjusted opioid and heroin mortality per 100,000, and the share of residents below the federal poverty line, both for 2015 to 2019.</p>
+          <p>In GeoDa I built a queen-contiguity spatial weights matrix, ran global Moran's I with 999 permutations for each variable, and used Local Indicators of Spatial Association (LISA) to locate the hot spots, cold spots, and outliers driving each result. To show where the two burdens coincide, each layer was reclassified to a one-to-five scale and summed with map algebra in ArcGIS Pro, producing a composite index that peaks tightly in central Denver.</p>
+          <h2>What it found</h2>
+          <p>Poverty proved roughly twice as spatially structured as overdose mortality (Moran's I of 0.445 versus 0.184). Poverty forms a coherent high-poverty core through central Denver and a broad low-poverty suburban ring, with 255 of 620 tracts in a significant local cluster.</p>
+          <p>Mortality is far more diffuse: only 121 tracts are significant, and nearly four fifths of the metro reaches no significance threshold at all.</p>
+          <h2>What it does not show</h2>
+          <p>The report is explicit about what it does not establish. Univariate Moran's I and LISA describe each variable on its own terms and do not test the relationship between poverty and mortality, and tract-level co-occurrence cannot support claims about individuals.</p>
+          <p>It closes with the next step: bivariate Moran's I and LISA on the same weights matrix, plus Empirical Bayes smoothing to tame unstable small-population rates and a re-run restricted to the urbanized core.</p>
+          <p class="note case-nav">Originally submitted for GEO 586; revised for portfolio presentation with framing, statistics reporting, and cartography corrected and the underlying analysis unchanged.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-label">Contact</h2>
+        <p class="copyright">&copy; 2026 Jared Dumale</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:dumalej@gmail.com">dumalej@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/jareddumale" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="../Assets/Dumale_CV.pdf" download="Dumale_CV.pdf">Download CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    /* Back goes to the page the visitor came from, or to the parent page if there is none. */
+    document.querySelectorAll("[data-back]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        try {
+          if (history.length > 1 && document.referrer && new URL(document.referrer).origin === location.origin) {
+            e.preventDefault();
+            history.back();
+          }
+        } catch (err) {}
+      });
+    });
+  </script>
+</body>
+</html>

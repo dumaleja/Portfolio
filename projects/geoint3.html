@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GEOINT³ academic poster | Jared Dumale</title>
+  <meta name="description" content="Case study: a three-axis framework for mapping where geospatial intelligence capability is built.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <a class="back" href="../portfolio.html" data-back>Back</a>
+        <a class="brand" href="../index.html" aria-label="Jared Dumale, home">Jared <span class="hl">Dumale</span></a>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="topnav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../portfolio.html" aria-current="true">Portfolio</a></li>
+          <li><a href="../recognition.html">Recognition</a></li>
+          <li><a href="../Assets/Dumale_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../portfolio.html">Portfolio</a><span aria-hidden="true">/</span>GEOINT³ academic poster</nav>
+      <article class="case card">
+        <aside class="case-side">
+          <img src="../Assets/Artifacts/USGIF_GEOINT_Symposium_Poster_preview.png" width="1210" height="935" alt="Preview of the GEOINT³ research poster: a cube diagram with axes for Analytic Complexity, Representational Engagement, and Decision Support Level.">
+          <div class="btn-row">
+          <a class="btn btn-primary" href="../Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf" target="_blank" rel="noopener noreferrer">Open the poster (PDF)</a>
+          <a class="btn" href="../Assets/Artifacts/USGIF_GEOINT_Symposium_Poster.pdf" target="_blank" rel="noopener noreferrer" download="Dumale_GEOINT3_USGIF_Symposium_Poster.pdf">Download</a>
+          </div>
+        </aside>
+        <div class="case-main">
+          <h1 class="case-title">GEOINT³: Reframing Geospatial Intelligence Education Across Concepts, Representations, and Reasoning</h1>
+          <p class="case-sub">Academic poster, GEOINT Symposium, Denver, CO, 2026</p>
+          <p class="meta">Texas State University and U.S. Air Force Academy. The poster file carries the subtitle A Three-Dimensional Framework for Geospatial Intelligence Capability Development.</p>
+          <ul class="tags" role="list" aria-label="Tools and skills">
+          <li class="tag">GEOINT Education</li>
+          <li class="tag">Curriculum Design</li>
+          <li class="tag">Spatial Thinking</li>
+          <li class="tag">Capability Frameworks</li>
+          <li class="tag">Program Assessment</li>
+          <li class="tag">Workforce Development</li>
+          </ul>
+          <div class="case-body">
+          <h2>The framework</h2>
+          <p>GEOINT³ is an educational framework I have been developing through my doctoral research at Texas State University, shaped by my time as Deputy Director of the Geospatial Intelligence Program at the U.S. Air Force Academy. It gives educators, program managers, and workforce developers a common language for mapping where GEOINT capability is actually built, and where it is not.</p>
+          <h2>The problem</h2>
+          <p>GEOINT education has no shared language for capability development. Programs define what to teach, not how thinking grows, and competency models are linear while GEOINT roles are not.</p>
+          <h2>The three axes</h2>
+          <p>The framework extends Jo and Bednarz's spatial thinking taxonomy from the classroom into a professional capability space with three axes:</p>
+          <ul>
+            <li><strong>Analytic Complexity:</strong> Descriptive, then Relational or Patterned, then Predictive or Anticipatory</li>
+            <li><strong>Representational Engagement</strong> (the Practitioner pathway): Consume, then Manipulate, then Design</li>
+            <li><strong>Decision Support Level</strong> (the Consumer pathway): Data Exploitation, then Analytic Judgment, then Decision Advantage</li>
+          </ul>
+          <p>Together they form 27 distinct capability contexts. Every GEOINT role occupies a region of the cube. The framework does not prescribe where a program should be. It shows where it is.</p>
+          <h2>How it was built and used</h2>
+          <p>It was built from a systematic review of GEOINT education literature and workforce models, refined through expert consultation, and piloted against the USGIF certificate curriculum at the Air Force Academy.</p>
+          <p>The poster also walks through a four-step program assessment (inventory, map, read the gaps, define your audience) and is candid about limits: the cube is still conceptual. Next steps are cross-institutional curriculum mapping, a learner self-assessment instrument, and empirical validation.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-label">Contact</h2>
+        <p class="copyright">&copy; 2026 Jared Dumale</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:dumalej@gmail.com">dumalej@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/jareddumale" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="../Assets/Dumale_CV.pdf" download="Dumale_CV.pdf">Download CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    /* Back goes to the page the visitor came from, or to the parent page if there is none. */
+    document.querySelectorAll("[data-back]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        try {
+          if (history.length > 1 && document.referrer && new URL(document.referrer).origin === location.origin) {
+            e.preventDefault();
+            history.back();
+          }
+        } catch (err) {}
+      });
+    });
+  </script>
+</body>
+</html>
