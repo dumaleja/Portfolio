@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Geo 412: World Geography Trivia | Jared Dumale</title>
+  <meta name="description" content="Case study: a browser game that teaches world geography and geographic combatant commands.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <a class="back" href="../portfolio.html" data-back>Back</a>
+        <a class="brand" href="../index.html" aria-label="Jared Dumale, home">Jared <span class="hl">Dumale</span></a>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="topnav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../experience.html">Experience</a></li>
+          <li><a href="../portfolio.html" aria-current="true">Portfolio</a></li>
+          <li><a href="../recognition.html">Recognition</a></li>
+          <li><a href="../Assets/Dumale_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)">CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../portfolio.html">Portfolio</a><span aria-hidden="true">/</span>Geo 412: World Geography Trivia</nav>
+      <article class="case card">
+        <aside class="case-side">
+          <img src="../Assets/Artifacts/Geo412_Country_Trivia_preview.png" width="1600" height="920" alt="Screenshot of the Geo 412 game: a world map with country outlines, a prompt asking the player to find Gabon, and a running score.">
+          <div class="btn-row">
+          <a class="btn btn-primary" href="https://www.geo412.com" target="_blank" rel="noopener noreferrer">Play the game</a>
+          <a class="btn" href="https://github.com/dumaleja/Geo-Trivia" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </div>
+        </aside>
+        <div class="case-main">
+          <h1 class="case-title">Geo 412: World Geography Trivia</h1>
+          <p class="case-sub">A type-in trivia game for learning the countries of the world and their geographic combatant commands</p>
+          <p class="meta">Live web application, 2025 to Present. Built for U.S. Air Force Academy cadets, Texas State University.</p>
+          <ul class="tags" role="list" aria-label="Tools and skills">
+          <li class="tag">JavaScript</li>
+          <li class="tag">HTML / CSS</li>
+          <li class="tag">Website Design</li>
+          <li class="tag">GitHub</li>
+          <li class="tag">AI-Assisted Coding (Claude Code)</li>
+          <li class="tag">Microsoft Azure</li>
+          <li class="tag">Curriculum Design</li>
+          </ul>
+          <div class="case-body">
+          <h2>What it is</h2>
+          <p>Geo 412 is a browser game I built with Claude Code to help my undergraduate students learn the countries of the world. Named for the geography course it supports at the U.S. Air Force Academy, it suits future military officers: the type-in trivia format drills which country falls under which geographic combatant command until the map sticks.</p>
+          <h2>Why I built it</h2>
+          <p>Flashcards and slides do not make world geography stick, and the test format rewards short-term memorization over real geographic intuition. Geo 412 turns the problem into a game.</p>
+          <p>Players are prompted with a country and must type the answer or find it on the world map, get instant feedback, and work through all of the countries in short, self-paced sessions. Because the answers are organized by geographic combatant command, cadets learn the operational geography they will be tested on and use as officers.</p>
+          <h2>How it is built</h2>
+          <p>The game is a hand-built front end in JavaScript, HTML, and CSS with an interactive SVG world map, developed with AI-assisted coding in Claude Code, version-controlled on GitHub, and deployed to Microsoft Azure at its own domain.</p>
+          <p>It is live and in use in the classroom, and it also supports my doctoral research into how AI can help educators design learning aids and effective teaching tools. The first version of the game, a click-the-country map quiz, is open source on GitHub under the MIT License.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-label">Contact</h2>
+        <p class="copyright">&copy; 2026 Jared Dumale</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:dumalej@gmail.com">dumalej@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/jareddumale" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="../Assets/Dumale_CV.pdf" download="Dumale_CV.pdf">Download CV (PDF)</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    /* Back goes to the page the visitor came from, or to the parent page if there is none. */
+    document.querySelectorAll("[data-back]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        try {
+          if (history.length > 1 && document.referrer && new URL(document.referrer).origin === location.origin) {
+            e.preventDefault();
+            history.back();
+          }
+        } catch (err) {}
+      });
+    });
+  </script>
+</body>
+</html>

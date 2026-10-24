@@ -4,133 +4,161 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Portfolio | Jared Dumale</title>
-  <meta name="description" content="Geospatial analysis, automation, and learning projects by Jared Dumale, with tools and links to full reports.">
+  <meta name="description" content="Geospatial analysis, automation, and learning projects by Jared Dumale, with full case studies.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="topnav">
-    <nav class="wrap topnav-inner" aria-label="Primary">
-      <a class="brand" href="index.html">DUMALE.ME</a>
-      <ul class="topnav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
-        <li><a href="speaking.html">Speaking</a></li>
-        <li><a href="recognition.html">Recognition</a></li>
-        <li><a href="Assets/Dumale_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)">CV</a></li>
-      </ul>
-    </nav>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="topbar-left">
+        <a class="back" href="index.html" data-back>Back</a>
+        <a class="brand" href="index.html" aria-label="Jared Dumale, home">Jared <span class="hl">Dumale</span></a>
+      </div>
+      <nav aria-label="Primary">
+        <ul class="topnav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+          <li><a href="recognition.html">Recognition</a></li>
+          <li><a href="Assets/Dumale_CV.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)">CV</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <div class="wrap">
 
       <div class="page-head">
-        <h1>Portfolio</h1>
-        <p class="lede">Projects and tools. Open a card for more, or read the full report where there is one.</p>
+        <h1 class="page-title">Portfolio</h1>
+        <p class="lede">Open a project for the full case study.</p>
       </div>
 
       <ul class="project-grid" role="list">
-
-        <li class="project" id="lake-mead">
-          <img class="project-thumb" src="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report_preview.png" width="875" height="718" alt="Map of Lake Mead with its current water surface in blue and the area it has lost shown as hatching." loading="lazy">
-          <div class="project-body">
-            <h2>Lake Mead surface-water loss</h2>
-            <p class="project-desc">Remote sensing analysis measuring change in Lake Mead's surface area over time.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">Satellite imagery</li>
-              <li class="tag">ArcGIS Pro</li>
-            </ul>
-            <a class="project-link" href="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report.pdf" target="_blank" rel="noopener">Read the report (PDF)</a>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>A remote sensing study that uses satellite imagery in ArcGIS Pro to measure how much Lake Mead's surface area has changed. The report has the method and the results.</p>
-              </div>
-            </details>
-          </div>
-        </li>
-        <li class="project" id="denver-opioid-poverty">
+        <li class="project">
           <img class="project-thumb" src="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA_preview.png" width="1024" height="635" alt="Map of the Denver metro area shaded from yellow to dark red by a composite index, with the highest values near the city center." loading="lazy">
           <div class="project-body">
             <h2>Opioid mortality and poverty in metro Denver</h2>
             <p class="project-desc">Spatial analytics study of how overdose deaths and poverty cluster across the Denver metro area.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">ArcGIS Pro</li>
-              <li class="tag">Spatial statistics</li>
-            </ul>
-            <a class="project-link" href="Assets/Artifacts/GEO_586_Denver_Poverty_Opioid_Mortality_ESDA.pdf" target="_blank" rel="noopener">Read the report (PDF)</a>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>A spatial analytics study of where overdose deaths and poverty cluster across the Denver metro area, using ArcGIS Pro and spatial statistics. The report has the maps and findings.</p>
-              </div>
-            </details>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">ArcGIS Pro</li>
+            <li class="tag">Spatial statistics</li>
+              </ul>
+              <a class="project-link" href="projects/denver-opioid.html">Read the case study</a>
+            </div>
           </div>
         </li>
-        <li class="project" id="bah-tool">
+        <li class="project">
+          <img class="project-thumb" src="Assets/Artifacts/USGIF_GEOINT_Symposium_Poster_preview.png" width="1210" height="935" alt="Preview of the GEOINT³ research poster: a cube diagram with axes for Analytic Complexity, Representational Engagement, and Decision Support Level." loading="lazy">
           <div class="project-body">
-            <h2>BAH Home Comparison Tool (in progress)</h2>
+            <h2>GEOINT³ academic poster</h2>
+            <p class="project-desc">A framework for mapping where GEOINT capability is built, presented at the GEOINT Symposium.</p>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">GEOINT education</li>
+            <li class="tag">Spatial thinking</li>
+              </ul>
+              <a class="project-link" href="projects/geoint3.html">Read the case study</a>
+            </div>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project-thumb" src="Assets/Artifacts/GEOG_883_Lake_Mead_Final_Report_preview.png" width="875" height="718" alt="Map of Lake Mead with its current water surface in blue and the area it has lost shown as hatching." loading="lazy">
+          <div class="project-body">
+            <h2>Lake Mead surface-water loss</h2>
+            <p class="project-desc">Remote sensing analysis measuring change in Lake Mead's surface area over time.</p>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">Satellite imagery</li>
+            <li class="tag">ArcGIS Pro</li>
+              </ul>
+              <a class="project-link" href="projects/lake-mead.html">Read the case study</a>
+            </div>
+          </div>
+        </li>
+        <li class="project">
+          <img class="project-thumb" src="Assets/Artifacts/Geo412_Country_Trivia_preview.png" width="1600" height="920" alt="Screenshot of the Geo 412 game: a world map with country outlines, a prompt asking the player to find Gabon, and a running score." loading="lazy">
+          <div class="project-body">
+            <h2>Geo 412: World Geography Trivia</h2>
+            <p class="project-desc">A browser game that teaches countries and their geographic combatant commands.</p>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">JavaScript</li>
+            <li class="tag">HTML / CSS</li>
+            <li class="tag">Microsoft Azure</li>
+              </ul>
+              <a class="project-link" href="projects/geo412.html">Read the case study</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="section-label group-title">Other projects</h2>
+      <ul class="project-grid" role="list">
+        <li class="project">
+          <div class="project-body">
+            <h3>BAH Home Comparison Tool (in progress)</h3>
             <p class="project-desc">Reusable model comparing median home prices by ZIP code to military housing allowance areas.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">ArcGIS Pro ModelBuilder</li>
-            </ul>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>Built to refresh with each monthly data release, so the comparison stays current. Still in progress.</p>
-              </div>
-            </details>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">ArcGIS Pro ModelBuilder</li>
+              </ul>
+              <details class="more">
+                <summary>More</summary>
+                <div class="more-body"><p>Built to refresh with each monthly data release, so the comparison stays current. Still in progress.</p></div>
+              </details>
+            </div>
           </div>
         </li>
-        <li class="project" id="automation-suite">
+        <li class="project">
           <div class="project-body">
-            <h2>Intelligence automation suite</h2>
+            <h3>Intelligence automation suite</h3>
             <p class="project-desc">Itinerary generator for high-risk missions, interactive airfield policy map, and live mission dashboard.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">Automation</li>
-              <li class="tag">Dashboards</li>
-            </ul>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>The suite also includes automated daily distribution of threat products to 3,000+ users. I built it as Senior Intelligence Duty Officer at the 618th Air Operations Center.</p>
-              </div>
-            </details>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">Automation</li>
+            <li class="tag">Dashboards</li>
+              </ul>
+              <details class="more">
+                <summary>More</summary>
+                <div class="more-body"><p>The suite also includes automated daily distribution of threat products to 3,000+ users. I built it as Senior Intelligence Duty Officer at the 618th Air Operations Center.</p></div>
+              </details>
+            </div>
           </div>
         </li>
-        <li class="project" id="learning-games">
+        <li class="project">
           <div class="project-body">
-            <h2>Spatial-reasoning learning games</h2>
+            <h3>Spatial-reasoning learning games</h3>
             <p class="project-desc">Three classroom games that teach map reading and spatial thinking.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">Course design</li>
-              <li class="tag">Digital platforms</li>
-            </ul>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>Part of the World Cultural Geography redesign at the U.S. Air Force Academy. The course results are on the <a href="experience.html#usafa">Experience</a> page.</p>
-              </div>
-            </details>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">Course design</li>
+            <li class="tag">Digital platforms</li>
+              </ul>
+              <details class="more">
+                <summary>More</summary>
+                <div class="more-body"><p>Part of the World Cultural Geography redesign at the U.S. Air Force Academy. The course results are on the <a href="experience.html#usafa">Experience</a> page.</p></div>
+              </details>
+            </div>
           </div>
         </li>
-        <li class="project" id="visual-identity">
+        <li class="project">
           <div class="project-body">
-            <h2>GEOINT program visual identity</h2>
+            <h3>GEOINT program visual identity</h3>
             <p class="project-desc">Recruiting pamphlet, patches, and academic posters for the Academy's GEOINT certificate program.</p>
-            <ul class="tags" role="list" aria-label="Tools">
-              <li class="tag">Adobe Illustrator</li>
-              <li class="tag">Photoshop</li>
-            </ul>
-            <details class="more">
-              <summary>More</summary>
-              <div class="more-body">
-                <p>The posters show how the program connects to workforce needs.</p>
-              </div>
-            </details>
+            <div class="project-foot">
+              <ul class="tags" role="list" aria-label="Tools">
+            <li class="tag">Adobe Illustrator</li>
+            <li class="tag">Photoshop</li>
+              </ul>
+              <details class="more">
+                <summary>More</summary>
+                <div class="more-body"><p>The posters show how the program connects to workforce needs.</p></div>
+              </details>
+            </div>
           </div>
         </li>
       </ul>
@@ -140,8 +168,8 @@
 
   <footer class="site-footer" id="contact">
     <div class="wrap footer-inner">
-      <div>
-        <h2 class="footer-title">Contact</h2>
+      <div class="footer-left">
+        <h2 class="footer-label">Contact</h2>
         <p class="copyright">&copy; 2026 Jared Dumale</p>
       </div>
       <ul class="footer-links">
@@ -151,5 +179,18 @@
       </ul>
     </div>
   </footer>
+  <script>
+    /* Back goes to the page the visitor came from, or to the parent page if there is none. */
+    document.querySelectorAll("[data-back]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        try {
+          if (history.length > 1 && document.referrer && new URL(document.referrer).origin === location.origin) {
+            e.preventDefault();
+            history.back();
+          }
+        } catch (err) {}
+      });
+    });
+  </script>
 </body>
 </html>
