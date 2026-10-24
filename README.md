@@ -1,4 +1,4 @@
-# Jared Dumale — Resume & Portfolio
+# Jared Dumale: Resume and Portfolio
 
 This repository hosts my personal resume and portfolio website, built with HTML and CSS and deployed via GitHub Pages.
 
